@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* caipiao Admin Login
+*  @Version: 1.0
+*  @Author:Rambo
+*  @Date:2014-09-29
+*  @Update:2014.10.08
+* */
+html, body { height: 100%; width: 100%; overflow: hidden; }
+
+body { background: url(../images/login-bg.jpg) center center no-repeat; margin: 0; }
+
+.loginCon { height: 100%; width: 100%; position: relative; }
+.loginCon .pForm { height: 56px; overflow: hidden; position: absolute; top: 50%; left: 50%; margin-left: -302px; margin-top: 20px; }
+.loginCon .pForm .inputTxt { border: 2px solid #fff; float: left; width: 212px; height: 30px; line-height: 30px; padding: 4px 12px; color: #fff; font-size: 16px; margin-right: 20px; display: inline; background: none; position: relative; z-index: 10; }
+.loginCon .pForm .sPassWord { float: left; position: relative; }
+.loginCon .pForm .sPassWord em { position: absolute; line-height: 30px; height: 30px; display: block; color: #fff; font-size: 16px; left: 14px; top: 6px; z-index: 5; font-style: normal; }
+.loginCon .pForm .submitBtn { width: 80px; height: 38px; line-height: 38px; float: left; font-size: 24px; font-family: arial; background-color: #fff; border: 2px solid #fff; color: #ba4328; text-align: center; text-decoration: none; }
+.loginCon .pForm .submitBtn:hover { background: none; color: #fff; text-decoration: none; }

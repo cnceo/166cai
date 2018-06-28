@@ -1,0 +1,75 @@
+/* caipiao Payment 
+*  @Version : 1.0
+*  @Author  : Rambo
+*  @Date    : 2014-11-26
+*  @Update  : 2014.11.26
+* */
+.other_bank i { background: url(/caipiaoimg/v1.0/images/icons-int.png?20150205) no-repeat; }
+
+.money_list li .s_yes, .bank_list li .s_yes { background: url(/caipiaoimg/v1.0/images/uc-sprites.png?20150205) no-repeat; }
+
+.slogan strong { font-family: 'Microsoft Yahei'; }
+
+.slogan { padding-left: 18px; }
+.slogan strong { display: inline-block; padding: 0 13px; height: 30px; line-height: 30px; font-size: 18px; font-weight: normal; color: #333; border-left: 1px solid #e5e5e5; }
+
+.pay-container { margin-top: 7px; }
+
+.product-info { position: relative; height: 78px; padding: 10px 20px; background: #f6f6f6; border: 1px solid #ddd; border-top: 3px solid #338ad1; }
+.product-info .tit, .product-info .total-money { font: normal 18px 'Microsoft YaHei'; color: #333; padding: 4px 0 5px; }
+.product-info p { color: #999; padding: 1px 0; }
+.product-info .total-money { position: absolute; right: 38px; text-align: right; top: 50%; margin-top: -15px; padding: 0; }
+.product-info .total-money b { font: bold 24px Arial; color: #f60; margin-right: 4px; position: relative; bottom: -1px; }
+
+.pay-method-cont { padding: 20px; border: 1px solid #ddd; border-top: 0 none; }
+
+.balance { padding: 12px 14px; line-height: 20px; font-size: 14px; border: 2px solid #eee; background: #fff; position: relative; *zoom: 1; }
+.balance-hover, .balance:hover { border-color: #e7f0fd; background: #f1f6fd; }
+.balance-selected { border-color: #cedae9; background: #e6eef8; }
+.balance-selected:hover { border-color: #cedae9; background: #e6eef8; }
+.balance label { font-weight: bold; margin-right: 13px; }
+.balance label .ipt_checkbox { margin-right: 6px; }
+.balance .account { font-family: Arial; color: #333; margin: 0 10px; }
+.money { color: #f60; font-family: Arial; margin-left: 4px; }
+.pay-nm { position: absolute; right: 17px; top: 12px; font-size: 14px; }
+.pay-nm .money { margin: 0 5px; font-size: 20px; position: relative; bottom: -2px; }
+.balance .balance-item { padding: 8px 0 0 18px; overflow: hidden; *zoom: 1; line-height: 34px; }
+.balance .balance-item .label_like, .balance .balance-item .ipt_text { float: left; }
+.balance .balance-item a { font-size: 12px; }
+
+.money_list, .bank_list { zoom: 1; position: relative; }
+.money_list ul, .bank_list ul { margin-right: -10px; *padding-bottom: 10px; }
+.money_list li, .bank_list li { float: left; text-align: center; color: #333; font-weight: bold; font-size: 14px; width: 158px; height: 45px; background: #fff; margin: 0 10px 10px 0; _display: inline; border: 1px solid #c6ced6; line-height: 20px; padding-top: 7px; position: relative; cursor: pointer; }
+.money_list li em, .bank_list li em { color: #999; font-weight: normal; display: block; font-size: 12px; }
+.money_list li .s_yes, .bank_list li .s_yes { position: absolute; width: 16px; height: 16px; overflow: hidden; background-position: 0px -27px; right: 0; bottom: 0; _bottom: -1px; display: none; }
+.money_list li.selected, .bank_list li.selected { border: 2px solid #f60; height: 44px; width: 156px; padding-top: 6px; }
+.money_list li.selected .s_yes, .bank_list li.selected .s_yes { display: block; }
+.money_list li:hover, .bank_list li:hover { border-color: #f60; }
+.money_list .hover, .bank_list .hover { border-color: #f60; }
+
+.bank_list { padding: 1px 0; }
+.bank_list ul { margin-right: -12px; }
+.bank_list li { width: 150px; height: 38px; padding: 1px 0 1px 8px; text-align: left; margin-right: 10px; }
+.bank_list li img { vertical-align: middle; }
+.bank_list li .s_yes { _right: -1px; _bottom: 0; }
+.bank_list li.selected { padding: 0 0 0 7px; border: 2px solid #f60; height: 38px; width: 149px; }
+.bank_list .line { height: 0px; padding: 2px 0 20px 5px; border-top: 1px dotted #d9d9d9; margin-top: 15px; position: relative; }
+
+.other_bank { position: absolute; left: 50%; top: -10px; overflow: hidden; background: #fff; width: 86px; height: 22px; margin-left: -43px; text-align: center; color: #3876b2; line-height: 22px; }
+.other_bank:hover { color: #3876b2; }
+.other_bank i { display: inline-block; overflow: hidden; background-position: -73px 0px; width: 13px; height: 8px; margin-left: 5px; *display: inline; *zoom: 1; vertical-align: middle; }
+
+.other_bank_shrink i { background-position: -87px 0px; }
+
+.pay-form { padding-top: 20px; *zoom: 1; position: relative; }
+.pay-form .pay-nm { top: 20px; }
+.pay-form .item { *zoom: 1; margin-bottom: 20px; padding-left: 113px; vertical-align: top; position: relative; }
+.pay-form .label_like { float: left; width: 98px; margin-left: -113px; padding-right: 15px; font-size: 14px; line-height: 34px; text-align: right; font-size: 14px; font-weight: bold; }
+.pay-form .con { float: left; position: relative; }
+.pay-form .btn_area { padding-left: 113px; }
+.pay-form .btn_area .btn-blue-med { width: 120px; font-weight: normal; }
+.pay-form .btn_area .tips { color: #999; padding-top: 5px; }
+
+.tab-content { padding-top: 20px; padding-right: 174px; }
+
+#payPwd { display: none; }

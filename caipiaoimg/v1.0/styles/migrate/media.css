@@ -1,0 +1,6 @@
+/* CSS Document */
+/******************************************窗口小于1300px*********************************************/
+@media all and (max-width: 1300px) {
+	#dialogLeft{ position:absolute; top:200px; left:-542px; opacity:0;}
+	#dialogRight{ position:absolute; top:-860px; right:0; }
+}

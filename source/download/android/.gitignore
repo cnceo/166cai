@@ -1,0 +1,3 @@
+ENV.CON
+!.gitignore
+./application/views/v1.1/static

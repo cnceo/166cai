@@ -1,0 +1,35 @@
+/* 合买大厅CSS */
+
+/* 容器 */
+.buyWrap{ width:1000px; margin:20px auto; overflow:hidden; min-height:500px;}
+
+/* 彩票 */
+.buyItems{ width:1100px;}
+.buyItems li{ width:320px; height:227px; background:url(../images/bg/buyBG.gif) no-repeat 0 0; float:left; margin:0 20px 20px 0;}
+.buyItemsPerson{ width:100%; height:70px; display: block;}
+.buyItemsPerson img{ float:left; margin:5px 10px 0 10px;}
+.buyItemsPerson div{ float:left; width:95px;}
+.buyItemsPerson div h2{ font-size:12px; font-weight:inherit; padding:20px 0 5px;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+.buyItemsPerson div h3{ font-size:12px;}
+.buyItemsPerson p{ float:right; width:140px;}
+.buyItemsPerson p strong{ display:block; text-align:right; padding:20px 0 5px 0;}
+.buyItemsPerson p strong a{ margin:0 10px; color:#cb131b;}
+.buyItemsPerson p span{ display:block; text-align:right; padding-right:10px; font-weight:bold;}
+.buyItemsView{ width:300px; margin:0 auto; padding:5px 0;}
+.buyItemsView p{line-height:23px; color:#666;}
+.buyItemsView .fr{ text-align:right;}
+.buyItemsColor{ width:300px; margin:0 auto; height:19px; background:#d8e1e6; position:relative; margin-bottom:7px;}
+.buyItemsColor span{ width:250px; height:19px; background:#a5c7ea; position:absolute; top:0; left:0; z-index:22;}
+.buyItemsColor strong{ width:200px; height:19px; background:#ef3f3f; position:absolute; top:0; left:0; z-index:33;}
+.buyItemsForm{ width:300px; margin:0 auto;}
+.buyItemsForm input{ float:left; width:215px; height:38px; line-height:38px; border:1px solid #a5c8e8; font-size:14px; text-indent:3px;}
+.buyItemsForm input.gray{ color:#aeb7bc;}
+.buyItemsForm a{ float:right; color:#ffffff; font-size:14px; text-align:center; line-height:40px; display:block; width:70px; height:40px; background:#C9141B; border:1px solid #991B1E; border-radius:2px;}
+.buyItemsForm a:hover{ text-decoration:none;}
+
+/* 翻页 */
+.buyPages{ text-align:center; padding:10px 0 0; height:50px;}
+.buyPages p{ padding-left:37%;}
+.buyPages span{ cursor:pointer; display:inline-block; margin:0 10px; width:70px; height:27px; line-height:27px; background:#000; color:#fff; font-size:14px; float:left;}
+.buyPages a{ cursor:pointer; display:inline-block; margin:0 10px; width:70px; height:27px; line-height:27px; background:#000; color:#fff; font-size:14px; float:left;}
+.buyPages select{ height:27px; line-height:27px; min-width:80px; float:left;}

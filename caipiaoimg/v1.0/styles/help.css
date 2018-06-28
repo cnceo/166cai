@@ -1,0 +1,94 @@
+@charset "UTF-8";
+/* caipiao help center
+*  @Version : 1.0
+*  @Author  : Rambo
+*  @Date    : 2014-11-03
+*  @Update  : 2014.11.03
+* */
+.help-side-nav dd a i { background: url(/caipiaoimg/v1.0/images/uc-sprites.png?20150205) no-repeat; }
+
+.help-side-nav dt em, .help-side-nav dd em, .help-side-nav dt.help-how-to-play i, .help-side-nav dt.help-how-to-recharge i, .help-side-nav dt.help-how-to-buy i, .help-side-nav dt.help-register i, .help-side-nav dt.help-rule i, .help-side-nav dt.help-drawings i, .help-side-nav dt.help-questions i, .article .question-top .help-question-stemp li em, .article .question-top .help-question-stemp a .help-icon-zhuce, .article .question-top .help-question-stemp a .help-icon-chongzhi, .article .question-top .help-question-stemp a .help-icon-goucai, .article .question-top .help-question-stemp a .help-icon-info, .article .question-top .help-question-stemp a .help-icon-tikuan { background: url(/caipiaoimg/v1.0/images/help.png?20150205) no-repeat; }
+
+.help-side-nav dt { font-family: 'Microsoft Yahei'; }
+
+.help-section .aside, .help-section .article { float: left; _display: inline; }
+
+.help-container { margin-top: 10px; border: 1px solid #cddce5; width: 998px; }
+
+.help-section { background: url(/caipiaoimg/v1.0/images/uc-section-bg.png?20150205) repeat-y left top #fff; }
+.help-section .aside { width: 150px; margin-right: -2px; margin-left: 1px; margin-top: -1px; }
+.help-section .article { width: 849px; }
+
+.help-side-nav dt.help-how-to-play i, .help-side-nav dt.help-how-to-recharge i, .help-side-nav dt.help-how-to-buy i, .help-side-nav dt.help-register i, .help-side-nav dt.help-rule i, .help-side-nav dt.help-drawings i, .help-side-nav dt.help-questions i { width: 21px; height: 22px; float: left; overflow: hidden; margin: 12px 11px 0 11px; }
+
+.help-side-nav dt em, .help-side-nav dd em { position: absolute; right: 18px; top: 18px; display: block; width: 12px; height: 12px; overflow: hidden; background-position: 0 -131px; }
+
+.help-side-nav { width: 148px; margin-bottom: 100px; }
+.help-side-nav dt { zoom: 1; height: 46px; line-height: 46px; border-top: 1px solid #fff; border-bottom: 1px solid #e2e8ed; color: #3191ce; font-size: 16px; position: relative; }
+.help-side-nav dt a { zoom: 1; color: #3191ce; display: block; }
+.help-side-nav dt a:hover { text-decoration: none; background-color: #e3ebf0; cursor: pointer; color: #3191ce; width: 148px; margin-left: -1px; padding-left: 1px; }
+.help-side-nav dt a:hover.help-home { background-color: #338ad1; color: #fff; font-size: 16px; border: none; width: 150px; text-align: center; padding-left: 0px; cursor: auto; }
+.help-side-nav dt.help-home { background-color: #338ad1; color: #fff; font-size: 16px; margin-left: -1px; border: none; width: 150px; text-align: center; padding-left: 0px; }
+.help-side-nav dt.help-how-to-play i { background-position: 0 0; }
+.help-side-nav dt.help-how-to-recharge i { background-position: 0 -67px; }
+.help-side-nav dt.help-how-to-buy i { background-position: 0 -200px; }
+.help-side-nav dt.help-register i { background-position: 0 -160px; }
+.help-side-nav dt.help-rule i { background-position: 0 -89px; }
+.help-side-nav dt.help-drawings i { background-position: 0 -44px; }
+.help-side-nav dt.help-questions i { background-position: 0 -22px; }
+.help-side-nav dt.current { text-decoration: none; background-color: #FFFFFF; color: #3191ce; cursor: pointer; height: 44px; line-height: 44px; margin-left: -2px; width: 149px; border-top: 1px solid #cecece; border-bottom: 1px solid #cecece; border-left: 1px solid #cecece; border-right: 1px solid #FFFFFF; }
+.help-side-nav dt.current a:hover { border: none; margin-left: 0px; background-color: #fff; padding-left: 0px; }
+.help-side-nav dt.current i { margin-top: 11px; }
+.help-side-nav dd { zoom: 1; height: 44px; line-height: 44px; position: relative; }
+.help-side-nav dd em { top: 16px; }
+.help-side-nav dd a { zoom: 1; padding-left: 43px; display: block; height: 44px; position: relative; font-size: 14px; color: #333; }
+.help-side-nav dd a i { width: 7px; height: 11px; position: absolute; overflow: hidden; right: 18px; top: 50%; margin-top: -5px; background-position: 0 0; }
+.help-side-nav dd a:hover { zoom: 1; color: #333; text-decoration: none; background: #e3ebf0; cursor: pointer; width: 105px; padding-left: 44px; margin-left: -1px; }
+.help-side-nav dd a:hover em { _right: 17px; }
+.help-side-nav dd.current { border: 1px solid #cecece; height: 46px; line-height: 46px; margin: -1px; margin-left: -2px; position: relative; z-index: 2; border-right-color: #fff; }
+.help-side-nav dd.current a { background: #fff; height: 46px; }
+.help-side-nav dd.current a:hover { background: #fff; height: 46px; line-height: 46px; border: none; margin: 0px; width: 107px; padding-left: 43px; }
+.help-side-nav dd.current a:hover em { right: 19px; }
+
+.aside .other-contact { padding-top: 19px; padding-bottom: 9px; *padding-bottom: 17px; border-top: 1px solid #fff; width: 148px; }
+.aside .other-contact a { display: block; width: 103px; height: 26px; line-height: 26px; text-align: center; margin: 0 auto 8px; background: #f8f8f8; border: 1px solid #dcdcdc; color: #666; }
+.aside .other-contact a:hover { border-color: #b5b5b5; color: #666; text-decoration: none; }
+
+.article .question-top .help-question-stemp a .help-icon-zhuce, .article .question-top .help-question-stemp a .help-icon-chongzhi, .article .question-top .help-question-stemp a .help-icon-goucai, .article .question-top .help-question-stemp a .help-icon-info, .article .question-top .help-question-stemp a .help-icon-tikuan { width: 44px; height: 44px; display: block; overflow: hidden; margin: 5px auto; }
+
+.article .question-top h2, .article .help-content h1 { font-size: 14px; line-height: 24px; color: #666666; padding: 10px 20px; }
+
+.article .question-top { width: 848px; margin-left: 1px; height: 125px; border-bottom: 1px solid #CECECE; overflow: hidden; background-color: #f7f8f9; }
+.article .question-top .help-question-stemp { overflow: hidden; *zoom: 1; margin-left: 57px; }
+.article .question-top .help-question-stemp li { float: left; width: 90px; height: 80px; text-align: center; }
+.article .question-top .help-question-stemp li.split { width: 66px; }
+.article .question-top .help-question-stemp li em { width: 22px; height: 22px; display: block; overflow: hidden; margin: 20px 22px; background-position: 0 -110px; }
+.article .question-top .help-question-stemp a { color: #666; display: block; width: 100%; height: 100%; overflow: hidden; cursor: pointer; }
+.article .question-top .help-question-stemp a .help-icon-zhuce { background-position: -22px 0; }
+.article .question-top .help-question-stemp a .help-icon-chongzhi { background-position: -22px -45px; }
+.article .question-top .help-question-stemp a .help-icon-goucai { background-position: -22px -90px; }
+.article .question-top .help-question-stemp a .help-icon-info { background-position: -22px -135px; }
+.article .question-top .help-question-stemp a .help-icon-tikuan { background-position: -22px -180px; }
+.article .question-top .help-question-stemp a span { display: block; width: 100%; }
+.article .question-top .help-question-stemp a:hover { color: #666; text-decoration: none; }
+.article .question-top .help-question-stemp a:hover .help-icon-zhuce { background-position: -67px 0; }
+.article .question-top .help-question-stemp a:hover .help-icon-chongzhi { background-position: -67px -45px; }
+.article .question-top .help-question-stemp a:hover .help-icon-goucai { background-position: -67px -90px; }
+.article .question-top .help-question-stemp a:hover .help-icon-info { background-position: -67px -135px; }
+.article .question-top .help-question-stemp a:hover .help-icon-tikuan { background-position: -67px -180px; }
+.article .help-content .hr { border: none; background: #e5e5e5; height: 1px; clear: both; overflow: hidden; margin-top: 10px; }
+.article .help-content .p-content, .article .help-content .p-content-suojin { padding: 10px 30px; margin-bottom: 30px; }
+.article .help-content .p-content .qs_box, .article .help-content .p-content-suojin .qs_box { line-height: 2; }
+.article .help-content .p-content .qs_box .detail_bg_info, .article .help-content .p-content-suojin .qs_box .detail_bg_info { font-size: 12px; line-height: 20px; }
+.article .help-content .p-content h3, .article .help-content .p-content-suojin h3 { color: #333333; font-weight: bold; font-size: 14px; line-height: 28px; padding: 10px 0px; }
+.article .help-content .p-content p, .article .help-content .p-content-suojin p { font-size: 14px; line-height: 28px; margin-bottom: 20px; color: #333333; }
+.article .help-content .p-content a, .article .help-content .p-content-suojin a { font-size: 14px; }
+.article .help-content .p-content .detail_bg_info, .article .help-content .p-content-suojin .detail_bg_info { background-color: #f5fbff; border: 1px solid #cedce5; padding: 15px 20px 15px 15px; color: #333333; position: relative; font-size: 14px; line-height: 28px; margin-bottom: 10px; margin-top: 10px; }
+.article .help-content .p-content .detail_bg_info .lingxing, .article .help-content .p-content-suojin .detail_bg_info .lingxing { position: absolute; font-size: 20px; line-height: 28px; color: #cedce5; top: -14px; left: 30px; }
+.article .help-content .p-content .detail_bg_info .lingxing_zhe, .article .help-content .p-content-suojin .detail_bg_info .lingxing_zhe { position: absolute; top: -13px; left: 30px; color: #f5fbff; font-size: 20px; line-height: 28px; }
+.article .help-content .p-content .detail_bg_info .close_x, .article .help-content .p-content-suojin .detail_bg_info .close_x { position: absolute; right: 6px; _right: 40px; top: -2px; color: #cedce5; font-family: "Adobe 黑体 Std", Verdana, Geneva, sans-serif; font-size: 16px; }
+.article .help-content .p-content .detail_bg_info .close_x:hover, .article .help-content .p-content-suojin .detail_bg_info .close_x:hover { text-decoration: none; }
+.article .help-content .p-content-suojin p { text-indent: 2em; }
+.article .help-content .help-title-time { text-align: right; color: #333333; }
+.article .help-content .help-title-time .big-title { font-size: 18px; font-weight: bold; text-align: center; line-height: 36px; margin: 30px 0px; }
+.article .help-content .help-title-time span { font-size: 12px; line-height: 28px; margin-right: 36px; }

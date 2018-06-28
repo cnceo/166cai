@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* caipiao xueyuan
+*  @Version : 1.0
+*  @Author  : weblol
+*  @Date    : 2015-06-04
+* */
+.course-filter ul, .course-list ul { *zoom: 1; }
+.course-filter ul:before, .course-list ul:before, .course-filter ul:after, .course-list ul:after { content: ""; display: block; }
+.course-filter ul:after, .course-list ul:after { clear: both; }
+
+.course-filter ul { padding: 13px 0 25px 0; border-top: 1px solid #e0e0e0; }
+.course-filter li { float: left; }
+.course-filter li.active a { background: #238be2; border-color: #238be2; color: #fff; }
+.course-filter li.active a:hover { background: #238be2; border-color: #238be2; color: #fff; }
+.course-filter a { float: left; height: 22px; margin-right: 10px; padding: 0 16px; background: #fff; border: 1px solid #e8e8e8; line-height: 22px; font-family: "微软雅黑"; color: #666; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
+.course-filter a:hover { background: #ebf6ff; border-color: #cddce5; _color: #666; text-decoration: none; }
+.course-list ul { margin-right: -20px; }
+.course-list li { position: relative; float: left; *width: 318px; margin: 0 20px 20px 0; background: #fff; border: 1px solid #e0e0e0; }
+.course-list li a:hover { text-decoration: none; }
+.course-list-img { _position: relative; _zoom: 1; display: block; margin: -1px -1px 0; }
+.course-list-txt { padding: 8px 10px; color: #999; }
+.course-list-txt h2 { font-weight: 600; font-size: 14px; }
+.course-list-txt h2 a { display: block; width: 290px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #333; }
+.course-list-txt h2 a:hover { color: #f30; text-decoration: underline; }
+.course-list-txt p { margin: 2px 0; }
+.course-list .like { position: absolute; right: 10px; bottom: 8px; color: #999; }

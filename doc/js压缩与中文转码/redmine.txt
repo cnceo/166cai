@@ -1,0 +1,20 @@
+普通压缩：
+解压jscompres_V3.0.5920.0_setup.1442907432.zip，双击JSCompress.exe会出现压缩操作页面后，可以选择手动压缩或自动压缩。
+如上述压缩出错，可以选择uglifyjs压缩。
+uglifyjs压缩：
+1.NodeJS官网下载最新版本并安装。
+查看安装版本：
+运行cmd
+node -v
+npm -v
+如果上诉两个命令出错，请打开系统环境变量Path，直接点确定。再试。
+2.安装UglifyJS 这里我们安装最新的版本
+npm install uglify-js -g
+
+压缩：
+uglifyjs f.js > f.min.js
+美化：
+uglifyjs -b f.min.js > f.b.js
+
+js文件中文转码操作：
+用浏览器打开unicode.html，将整个js文件内容拷贝到文本框后点击“Chinese2Unicode”将文本框内容拷贝出来完成转码。

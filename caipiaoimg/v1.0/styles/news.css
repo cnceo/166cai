@@ -1,0 +1,78 @@
+/* CSS Document */
+/* 容器 */
+.news{ width: 1000px; margin: 0 auto;}
+.newsNav{ width: 100%; height: 35px; margin:10px 0; background: #353A37;}
+.newsLeft, .newsRight{ margin-bottom: 10px; overflow: hidden;}
+
+/*新闻菜单*/
+.newsNav ul{ height: 35px; border-bottom: 2px solid #C9141B;}
+.newsNav ul li a{ width:80px; float:left; height:35px; line-height:35px; text-align:center; color:#fff; font-size: 14px;}
+.newsNav ul li.selected a{ background: #C9141B;}
+
+/*新闻左部分*/
+.newsLeft{ width: 740px; min-height: 500px; color:#000; float: left;}
+
+/*新闻详情*/
+.newsLeft .manage{ padding: 0 20px;}
+.newsLeft .manage .title{ height: 80px;}
+.newsLeft .manage .title h3{ text-align: center; font-weight: normal; font-size: 32px;}
+.newsLeft .manage .title p{ height: 30px; border-top: 1px solid #ECEFF1; border-bottom: 1px solid #ECEFF1; background: #f9f9f9;}
+.newsLeft .manage .title p span{ line-height: 30px; margin-left: 195px;}
+.newsLeft .manage .content{ padding: 20px 0;}
+/*新闻右部分*/
+/*公告和活动*/
+.newsRight{ width: 240px; min-height: 500px; float: right;}
+.newsRight .cement{ width: 238px; overflow: hidden;}
+.newsRight .cement a{ color: #000;}
+.newsRight .cement ul{ height: 30px; background: #E9F3FF;}
+.newsRight .cement ul li{ width: 58px; height: 30px; line-height: 30px; text-align: center; font-size: 14px; padding:0 2px; cursor: pointer; float: left;}
+.newsRight .cement ul li.txt_right{ width: 110px;  text-align: right;}
+.newsRight .cement ul li.selected{ background: #fff;}
+.newsRight .cement div{ margin-top: 2px;}
+.newsRight .cement div.hidden{ display: none;}
+.newsRight .cement div p{ white-space: nowrap; text-overflow: ellipsis; overflow: hidden; width: 228px; margin: 2px 0 0px 5px; padding: 2px 0;}
+.newsRight .cement div p a{ clear: both; color: #676767; margin-right: 5px;}
+.newsRight .cement div p a:hover{ text-decoration: underline;}
+
+/*广告*/
+.advertising { margin-top: 5px;}
+.advertising a{ display: block; margin-top: 5px;}
+
+
+/*all*/
+.newList ul li{ margin: 5px 0; padding-left: 16px; margin-right: 20px; border-left: 4px solid #fff;}
+.newList ul li a{ display: block; width:100%; height: 30px; line-height: 30px; color: #000; border-bottom: 1px dashed #000;}
+.newList ul li a:hover{ text-decoration: none; color: #D14B4F;}
+.newList ul li:hover{ border-left: 4px solid #C9141B;}
+.newList ul li strong{ margin-right: 5px; font-weight: normal;}
+.newList ul li span.content{ dispaly: block; float: left;}
+.newList ul li span.time{ dispaly: block; margin-right: 5px; float: right;}
+
+/*分页*/
+.page{
+    text-align: center;
+    padding: 10px 0 0;
+    height: 50px;
+}
+.page p{
+    padding-left: 34%;
+}
+.page span {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 10px;
+    width: 70px;
+    height: 27px;
+    line-height: 27px;
+    background: #000;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    float: left;
+}
+.page select{
+    height: 27px;
+    line-height: 27px;
+    min-width: 80px;
+    float: left;
+}

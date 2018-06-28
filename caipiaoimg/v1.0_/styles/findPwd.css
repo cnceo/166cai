@@ -1,0 +1,54 @@
+/* µÇÂ¼¡¢ÊÖ»ú×¢²á¡¢ÓÃ»§Ãû×¢²áCSS */
+.AccountWrap{ min-width:1000px; min-height:543px; width:100%; background:url(../images/login/prompt_bg.png) no-repeat; margin-bottom:50px;}
+/* µÇÂ¼Ò³ */
+.loginWrap{ width:1000px; margin:0 auto; height:525px; font-family:"ºÚÌå";}
+.loginWrap .fl{ width:620px; height:444px;}
+.loginWrap .fl p{ height:130px; text-align:center;}
+.loginWrap .fl h3{ font-size:16px; color:#ffb302;padding:80px 0 5px 120px;}
+.loginWrap .fl h4{ font-size:18px; color:#ffb302; text-align:center; padding:80px 0 15px 0;}
+.loginWrap .fl h2{ text-align:center; font-size:32px; color:#c8151b;}
+.loginWrap .fl h2 strong{ color:#ffb302;}
+.reset{ font-size:20px; color:#251c1d; padding:10px 0 0 10px; }
+.loginWrap .fr{ overflow:hidden; margin-left: 620px; float: none;}
+.loginWrap .fr .login-container {height:441px; border:1px solid #828282;background: #fff; margin-top: 50px;}
+.loginTab{ width:378px; height:68px; border-bottom:1px solid #ccd6e4;  padding:0 10px;}
+.loginTab span{ margin-left:8px; float:left; height:66px; line-height:66px; font-size:20px; color:#251c1d; }
+.loginTab span.selected{ color:#251c1d; border-bottom:3px solid #c9141b;}
+.loginTab a{ display:block; float:right; margin-right:25px; line-height:66px; text-decoration:none; font-size:14px; color:#c9141b;}
+
+/* µÇÂ¼ */
+.loginForm{ padding:15px; width:350px; height:324px; position:relative;}
+.loginFormInput{ padding:6px 0; position:relative; height:46px;}
+.loginFormInput input{ width:343px; height:46px; line-height:46px; border:1px solid #c4c9cd; background-color:#f6f9fd; position:absolute; top:0; left:0; z-index:11; border-radius:3px; font-size:14px;}
+.loginFormInput span{ color:#c2cdd9; font-size:14px; width:200px; padding-left:10px; position:absolute; top:0; left:0; z-index:22; line-height:46px;}
+.loginFormInput input.hover{ border:1px solid #368ae8; background:#FCFCFC;}
+.loginFormYzm{ display:inline-block; width:110px; height:46px; line-height:46px; color:#fff; background:#251C1D; border-radius:2px; position:absolute; top:0; left:240px; font-size:14px; text-align:center;}
+.loginFormYzmOn{ background-position:0 -63px;}
+.loginFormInput a:hover{ text-decoration:none;}
+.loginFormForget{ height:25px; line-height:25px; text-align:center; width:350px;}
+.loginFormForget a{ color:#5dc0e7; font-size:16px;}
+.loginFormError{ width:350px; height:35px; line-height:35px; text-align:center; font-size:14px; font-weight:bold; background:#f6e4e4; border-radius:3px;}
+.loginFormBtn{ padding:5px 0;}
+.loginFormBtn a{ width:350px; height:45px; line-height:45px; text-align:center; color:#fff; font-size:16px; background:#368AE8; border-radius:2px; display:block;}
+.loginFormBtn a:hover{ text-decoration:none;}
+.loginPartner{ height:105px; width:100%; background:#251c1d; line-height:105px; text-align:center;}
+.loginPartner a{ margin:0 25px;}
+
+.other{ overflow:hidden; position:absolute; bottom:-10px;}
+.other h3{ font-size:14px;}
+.other ul{ width:350px; margin-top:10px; }
+.other ul li{ float:left; margin-left:15px;}
+.other ul li a{ display:block; width:50px; height:70px;}
+.other ul .souhu a{ background:url(../images/login/sohu.png) no-repeat;}
+.other ul .qq a{ background:url(../images/login/qq.png) no-repeat;}
+.other ul .weixin a{ background:url(../images/login/weixin.png) no-repeat;}
+.other ul .weibo a{ background:url(../images/login/weibo.png) no-repeat;}
+.other ul .pay a{ background:url(../images/login/pay.png) no-repeat;}
+
+/* ÊÖ»ú×¢²á */
+.phoneReg{ margin-top:-6px;}
+.loginFormAgreement{ padding-bottom:5px; font-size:12px; text-align:center;}
+.loginFormAgreement a{ color:#1467ab;}
+.loginFormAgreement input{ width:15px; height:15px;}
+
+/* ÓÊÏä×¢²á */

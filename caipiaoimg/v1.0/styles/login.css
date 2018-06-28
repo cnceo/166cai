@@ -1,0 +1,25 @@
+/* caipiao 
+*  @Version: 1.0
+*  @Author:Rambo & LuYujun & LiuXin
+*  @Date:2014-10-23
+*  @Update:2014.10.23
+* */
+.lay_login .act-total .money-num { font-family: 'Microsoft Yahei'; }
+
+/*page_login*/
+.lay_login { min-height: 445px; height: auto !important; _height: 445px; border: 5px solid #f2f2f2; position: relative; }
+.lay_login_hd { position: relative; padding: 18px 0 25px 70px; margin-right: 30px; }
+.lay_login_hd h2 { color: #333333; font-family: 'Microsoft Yahei'; font-size: 20px; font-weight: normal; }
+.lay_login_hd .more { position: absolute; right: 0; top: 25px; color: #2371c8; text-decoration: underline; }
+.lay_login .login_join { margin: 0 auto; padding: 0; }
+.lay_login .login_join .act_area, .lay_login .login_join .ws_area, .lay_login .login_join .bind_area { margin: 0 auto 25px; width: 475px; }
+.lay_login .act-total { position: absolute; right: 0; top: 0; width: 295px; height: 446px; overflow: hidden; background: url(/caipiaoimg/v1.0/images/total-act.png?20150205) no-repeat; z-index: 2; }
+.lay_login .act-total .money-num { position: absolute; width: 100%; height: 39px; line-height: 0; text-align: center; top: 103px; left: 0; font-size: 20px; color: #fff; *line-height: 47px; }
+.lay_login .act-total .money-num em { position: relative; *bottom: 4px; display: inline-block; margin: 0 1px; width: 28px; height: 36px; overflow: hidden; padding: 0 2px 3px 0; text-align: center; vertical-align: text-bottom; font: bold 28px/36px 'Microsoft yahei'; background: url(/caipiaoimg/v1.0/images/money-num-bg.png?20150205) no-repeat; _background: none; _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=noscale, src="/caipiaoimg/v1.0/images/money-num-bg.png?20150205"); color: #be0000; }
+
+.lay_login .form_login .form_tips .tips_con { width: 188px; }
+
+.partner-login .lay_login_hd h2 { margin-bottom: 5px; }
+.partner-login .lay_login_hd em { color: #999; font-size: 14px; }
+.partner-login .mod_user { padding-left: 38px; }
+.partner-login .have-user { position: absolute; bottom: 0; _bottom: -1px; left: 0; width: 840px; height: 40px; line-height: 40px; padding-left: 150px; background: #f7f7f7; z-index: 1; color: #b6b6b6; }

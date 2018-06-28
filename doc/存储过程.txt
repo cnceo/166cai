@@ -1,0 +1,149 @@
+DELIMITER $$
+drop procedure cp_get_orders;
+CREATE PROCEDURE cp_get_orders(IN sql0 varchar(1000), IN sql1 varchar(2000), IN sql2 varchar(2000), IN sql3 varchar(2000), IN sql4 varchar(2000), IN sql5 varchar(2000), IN sql6 varchar(2000), OUT total int(11), OUT notover int(11), OUT money int(11), OUT prize int(11))
+BEGIN  
+       create temporary table if not exists `cp_get_orders_tmp` (
+   `id` bigint(20) NOT NULL AUTO_INCREMENT,
+   `uid` bigint(20) NOT NULL,
+   `orderId` varchar(50) NOT NULL,
+   `lid` int(11) NOT NULL,
+   `money` bigint(20) NOT NULL,
+   `buyTotalMoney` bigint(20) DEFAULT NULL,
+   `buyMoney` bigint(20) DEFAULT NULL,
+   `guarantee` bigint(20) DEFAULT NULL,
+   `nick_name` varchar(50) NOT NULL,
+   `orderType` tinyint(2) NOT NULL,
+   `subOrderType` tinyint(2) NOT NULL,
+   `singleFlag` tinyint(2) NOT NULL,
+   `playType` smallint(3) NOT NULL,
+   `isChase` tinyint(2) NOT NULL,
+   `issue` varchar(20) NOT NULL,
+   `status` int(10) NOT NULL,
+   `my_status` int(11) NOT NULL,
+   `margin` bigint(20) NOT NULL,
+   `endTime` datetime NOT NULL,
+   `add_money` bigint(20) NOT NULL DEFAULT '0',
+   `is_hide` tinyint(2) NOT NULL DEFAULT '0',
+   `created` datetime NOT NULL,
+   PRIMARY KEY (`id`)
+ );
+ truncate TABLE cp_get_orders_tmp;
+     begin  
+ IF(sql2 <> '') THEN   
+        set @sql2 = sql2;
+ PREPARE stmtinsert FROM @sql2;  
+        EXECUTE stmtinsert; 
+ DEALLOCATE PREPARE stmtinsert; 
+        END IF;
+ IF(sql3 <> '') THEN   
+        set @sql3 = sql3;
+ PREPARE stmtinsert FROM @sql3;  
+        EXECUTE stmtinsert; 
+ DEALLOCATE PREPARE stmtinsert; 
+        END IF;
+ IF(sql4 <> '') THEN   
+        set @sql4 = sql4;
+ PREPARE stmtinsert FROM @sql4;  
+        EXECUTE stmtinsert; 
+ DEALLOCATE PREPARE stmtinsert; 
+        END IF;
+ IF(sql5 <> '') THEN   
+        set @sql5 = sql5;
+ PREPARE stmtinsert FROM @sql5;  
+        EXECUTE stmtinsert; 
+ DEALLOCATE PREPARE stmtinsert; 
+        END IF;
+ IF(sql6 <> '') THEN   
+        set @sql6 = sql6;
+ PREPARE stmtinsert FROM @sql6;  
+        EXECUTE stmtinsert; 
+ DEALLOCATE PREPARE stmtinsert; 
+        END IF;
+     end;  
+ IF(sql0 <> '') THEN   
+        set @sql0 = sql0;
+ PREPARE stmtselect FROM @sql0;  
+        EXECUTE stmtselect; 
+ DEALLOCATE PREPARE stmtselect; 
+        END IF;
+ IF(sql1 <> '') THEN   
+        set @sql1 = sql1;
+ PREPARE stmtcount FROM @sql1;  
+        EXECUTE stmtcount; 
+ DEALLOCATE PREPARE stmtcount; 
+ set total = @total, notover = @notover, money = @money, prize = @prize;
+        END IF;
+END $$
+DELIMITER ;
+
+函数（用户成长体系）
+DELIMITER $
+DROP TRIGGER IF EXISTS bn_cpiao.cp_orders_trg;
+create trigger cp_orders_trg after update
+on bn_cpiao.cp_orders for each row
+begin
+if (old.status != new.status) && ((old.orderType =4 and new.status = 500) OR (old.orderType !=4 AND new.status in (500,510))) then
+insert bn_cpiao_tmp.cp_orders_trg(orderId, orderType, source1, created) 
+values(new.orderId, new.orderType, 1, now()) 
+on duplicate key update source1 = values(source1);
+end if;
+end$
+DELIMITER ;
+
+
+DELIMITER $$
+DROP FUNCTION if exists my_task_get;
+CREATE FUNCTION my_task_get(data TEXT, typ INT UNSIGNED, tim INT UNSIGNED)
+RETURNS INT
+BEGIN
+ DECLARE tag TEXT;
+ DECLARE P, R, D INT;
+ SET P = LOCATE(':', data, 1);
+ SET R = 0;
+ SET tag = SUBSTRING_INDEX(SUBSTRING_INDEX(data,':',typ+1), ':', -1);
+ IF (P != 0 && tag != '') THEN
+  IF (tim = 0) THEN
+   SET R = SUBSTRING_INDEX(tag,'_',-1);
+  ELSE
+   SET D = TIMESTAMPDIFF(DAY,FROM_UNIXTIME(SUBSTRING_INDEX(tag,'_',1), '%Y-%m-%d'),date(now()));
+   IF (D <= tim ) THEN
+    SET R = SUBSTRING_INDEX(tag,'_',-1);
+   END IF;
+  END IF;
+ END IF;
+RETURN R;
+END $$
+DELIMITER ;
+
+DELIMITER $$
+DROP FUNCTION if exists my_task_set;
+CREATE FUNCTION my_task_set(data TEXT, typ INT UNSIGNED, val INT UNSIGNED)
+RETURNS TEXT
+BEGIN
+DECLARE tag,tmp,subs TEXT;
+DECLARE I,P,N INT;
+SET I = 1;
+SET subs = ':';
+SET P = LOCATE(':', data, 1);
+SET tag = SUBSTRING_INDEX(SUBSTRING_INDEX(data,':',I+1), ':', -1);
+SET N = (length(data) - length(REPLACE(data, ':', '')));
+SET N = if(N - 1 > typ, N - 1, typ);
+WHILE (tag != '' || I <= N) DO
+ IF (I = typ) THEN
+  SET subs = CONCAT(subs,UNIX_TIMESTAMP(),'_',val,':');
+ ELSE
+  IF (P = 0 && I = 1) THEN
+   SET subs = CONCAT(subs,':');
+  ELSE
+   SET subs = CONCAT(subs,SUBSTRING_INDEX(SUBSTRING_INDEX(data,':',I+1), ':', -1),':');
+  END IF;
+ END IF;
+ IF (P = 0) THEN
+  SET data = '';
+ END IF;
+ SET I = I + 1;
+ SET tag = SUBSTRING_INDEX(SUBSTRING_INDEX(data,':',I+1), ':', -1);
+END WHILE;
+RETURN subs;
+END $$
+DELIMITER ;

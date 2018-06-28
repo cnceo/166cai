@@ -1,0 +1,102 @@
+/* 竞技彩CSS */
+
+/* 彩票信息 */
+.lottery{ width:100%; min-width: 1000px; margin:0; background:url(../images/bg/dg_bg.png) repeat; }
+.wrap{ margin:0 auto; padding:10px 0;}
+
+.lotteryTit{ width:1000px; height:90px; color:#333; background:#fff;}
+.lotteryTitImg{ float:left; width:100px; text-align:center; padding:8px 0 0;}
+.userIinfoImg img{ border:2px solid #b5bdc0;}
+.lotteryTitName{ float:left;}
+.lotteryTitName h3{ padding:10px 0 5px;}
+.lotteryTitName h3 strong{ color:#cd3438; font-size:20px;}
+.lotteryTitName span{ font-size:14px; margin-left:20px; display:inline-block;}
+.lotteryTitName p{ padding-top:15px; font-size:14px;}
+.lotteryTit .fr{ width:300px; padding:60px 0 0; text-align:right; font-size:14px;}
+.lotteryTit .fr p a{ margin:0 10px; color:#cd3438;}
+
+/* 彩票 */
+.userLottery{ width:100%; margin:10px 0;}
+.userLotteryTab{ height:31px; width:100%; border-bottom:2px solid #c9141b;}
+.userLotteryTab a{ display:inline-block; width:99px; text-align:center; height:31px; line-height:31px; font-size:16px; color:#fff; background:#353a37; font-weight:bold; float:left; margin-right:1px;}
+.userLotteryTab a:hover{ text-decoration:none;}
+.userLotteryTab a.rightLine{ background:#d8e1e6 url(../images/bg/userLine.gif) no-repeat top right;}
+.userLotteryTab a.selected{ background:#c9141b; color:#fff;}
+
+/* 竞彩足球 */
+.userLboxItems{ overflow:hidden; }
+.userLboxItems .nav{ width:1000px; height:35px; background:#fff;}
+.userLboxItems .nav li{ width:100px; line-height:35px; float:left; text-align:center; border-right:1px solid #d8e1e6; cursor:pointer;}
+.userLboxItems .nav li.selected{ background:#c9141b;}
+.userLboxItems .nav li a{ color:#666;}
+.userLboxItems .nav li.selected a{ color:#fff;}
+.userLboxItems .lotteryChoose{ width:1000px; height:70px; background: #10340B; border-left:1px solid #194F1E; border-right:1px solid #194F1E; border-bottom:1px solid #194F1E; overflow:hidden;}
+.userLboxItems .lotteryChoose .seleFiveInfo { float:left; padding:10px 0;}
+.userLboxItems .lotteryChoose .seleFiveInfo li{ color:#C7C5C5; float:left; margin-left:10px; width:52px; height:52px; background:url(../images/bg/dg_icon.png) -364px 0px no-repeat; line-height:52px; text-align:center; cursor:pointer;}
+.userLboxItems .lotteryChoose .seleFiveInfo li.selected{ color:#fff;}
+.userLboxItems .lotteryChoose .seleFiveInfo li span{ display:block; width:52px; height:52px;}
+.userLboxItems .lotteryChoose .seleFiveInfo li:hover span{ color:#fff; background:url(../images/bg/dg_icon.png) -416px 0px no-repeat;}
+.userLboxItems .lotteryChoose .seleFiveBtn { float:right; font-size:14px; font-weight:bold; margin-top:4px;}
+.userLboxItems .lotteryChoose .seleFiveBtn h3{ font-weight:normal;}
+.userLboxItems .lotteryChoose .seleFiveBtn h3 { color:#cbcdcc; margin-right:10px; font-weight:normal;}
+.userLboxItems .lotteryChoose .seleFiveBtn h3 a{ color:#0da869; margin:0 10px;}
+.userLboxItems .lotteryChoose .seleFiveBtn p a{ display:block; color:#fff; height:30px; line-height:30px; text-align:center; float:right; margin:8px 10px 8px 0; border-radius:2px;}
+.userLboxItems .lotteryChoose .seleFiveBtn p a.seleViewRed { min-width:155px; background:#C9141B; border:1px solid #991B1D; padding:0 10px;}
+.userLboxItems .lotteryChoose .seleFiveBtn p a.seleViewYellow { width:85px; background:#ed9f17; border: 1px solid #D0A57F;}
+
+/*表格循环*/
+.lotteryTableTH{ width: 1000px;}
+.lotteryTableTH table{ border:1px solid #077548; width:496px; margin-bottom:10px; color:#cbcdcc;}
+.lotteryTableTH table td{ text-align:center; border:1px solid #077548; height:48px; overflow:hidden;}
+.lotteryTableTH table td strong{ margin:5px 0;}
+.lotteryTableTH table td strong.ml{ margin-left: 25px;}
+.lotteryTableTH table td strong.mr{ margin-right: 25px;}
+.lotteryTableTH table td a{ text-decoration: none; color:#ffcc00;}
+.lotteryTableTH table td div{ height:46px; line-height:46px; cursor:pointer;border: 1px solid rgba(0, 0, 0, 0);}
+.lotteryTableTH table td div.selected{ border:1px solid #ffcc00; line-height:25px; position: relative;}
+.lotteryTableTH table td div em{display:none;}
+.lotteryTableTH table td div.selected em{width:20px; height:20px; font-size:14px; display:block; line-height:20px; color:#dadada; background:#475f17; position:absolute; bottom:0; left:0px; z-index:25;}
+.lotteryTableTH table td div.selected em:hover{ color:#fff;}
+.lotteryTableTH table td div.selected span{ width:100%; height:20px; display:block; line-height:20px; filter:alpha(opacity=80); opacity:0.8; color:#fff; background:#475f17; position:absolute; bottom:0; left:0;}
+
+.lotteryFlayer{ width:850px; height:475px; border:2px solid #b4bdc3; margin:0 0 20px 20px;}
+.lotteryFlayer h1{ position:relative; height:52px; line-height:52px; background:#c9141b; color:#fff; text-indent:10px; font-size:20px;}
+.lotteryFlayer h1 a{ position:absolute; top:15px; right:15px;}
+.lotteryFlayerBox{ padding:10px 0 0 10px;}
+.lotteryFlayerBox .fl{ margin-right:10px; width:264px; height:388px; overflow:scroll; overflow-x:hidden; border:1px solid #b4bdc3;}
+.lotteryFbTable{ width:100%;}
+.lotteryFbTable td{ border:1px solid #b4bdc3; height:35px; font-size:14px; font-weight:bold;}
+.lotteryFbTable th{ border:1px solid #b4bdc3; height:70px; font-size:14px; font-weight:bold; text-align:center;}
+.lotteryFbTable td h4{ height:35px; line-height:35px; text-indent:10px; border-bottom:1px solid #b4bdc3;}
+.lotteryFbTable td h5{ height:35px; line-height:35px; text-indent:10px;}
+.lotteryFbTable tr.hover th{ border:1px solid #c9141b; background:#c9141b; color:#fff;}
+.lotteryFbTable tr.hover td{ border:1px solid #c9141b;}
+.lotteryFlayerBox .fr{ width:550px; height:388px; border:1px solid #b4bdc3; float:left;}
+.lotteryFbTable2{ width:100%;}
+.lotteryFbTable2 th{ height:42px; line-height:42px; text-align:center; background:#d8e1e6; color:#6c7479; font-size:14px; font-weight:bold;}
+.lotteryFbSroll{ width:550px; height:306px; overflow:scroll; overflow-x:hidden;}
+.lotteryFbTable3{ width:100%;}
+.lotteryFbTable3 td{ height:35px; line-height:35px; border:1px solid #b4bdc3; text-align:center;}
+
+
+.userLboxItems .lotteryChoose .seleFiveInfo li.yuan-2.selected {
+    background:url(../images/bg/dg_icon.png) 0px 0px no-repeat;
+}
+.userLboxItems .lotteryChoose .seleFiveInfo li.yuan-10.selected{
+    background:url(../images/bg/dg_icon.png) -52px 0px no-repeat;
+}
+.userLboxItems .lotteryChoose .seleFiveInfo li.yuan-50.selected {
+    background:url(../images/bg/dg_icon.png) -104px 0px no-repeat;
+}
+.userLboxItems .lotteryChoose .seleFiveInfo li.yuan-100.selected {
+    background:url(../images/bg/dg_icon.png) -156px 0px no-repeat;
+}
+.userLboxItems .lotteryChoose .seleFiveInfo li.yuan-500.selected {
+    background:url(../images/bg/dg_icon.png) -208px 0px no-repeat;
+}
+.userLboxItems .lotteryChoose .seleFiveInfo li.yuan-1000.selected {
+    background:url(../images/bg/dg_icon.png) -260px 0px no-repeat;
+}
+.userLboxItems .lotteryChoose .seleFiveInfo li.yuan-5000.selected {
+    background:url(../images/bg/dg_icon.png) -312px 0px no-repeat;
+}

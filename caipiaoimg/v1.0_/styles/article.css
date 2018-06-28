@@ -1,0 +1,10 @@
+/* CSS Document */
+/* 容器 */
+.buyWrap{ width:1000px; margin:20px auto; overflow:hidden; min-height:500px;}
+/*用户协议*/
+.articles{ font-family:"宋体",Verdana, Geneva, sans-serif; font-size:18px;}
+.title h1{ font-family:"黑体",Verdana, Geneva, sans-serif; background:#d8e1e6; font-size:30px; text-align:center;}
+.title p, .sequence{ margin-top:30px;}
+.sequence h3{ color:#c9141b;}
+.sequence label{ display:block;}
+.sequence label span{ display:block;}

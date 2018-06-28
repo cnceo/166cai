@@ -1,0 +1,75 @@
+/* caipiao Other Misc
+*  @Version : 1.0
+*  @Author  : Rambo
+*  @Date    : 2014-11-11
+*  @Update  : 2014.11.11
+* */
+.steps-bar li i { background: url(/caipiaoimg/v1.0/images/uc-sprites.png?20150205) no-repeat; }
+
+.article-container { background: url(/caipiaoimg/v1.0/images/article-top-bg.png?20150205) no-repeat; }
+
+.mod-k .hd h2, .lay-find .hd .tit, .mail-alert { font-family: 'Microsoft Yahei'; }
+
+.friend-link .link-bd ul { *zoom: 1; }
+.friend-link .link-bd ul:before, .friend-link .link-bd ul:after { content: ""; display: block; }
+.friend-link .link-bd ul:after { clear: both; }
+
+.article-container .article-list li .dian { width: 2px; height: 2px; display: block; overflow: hidden; background-color: #333333; float: left; margin-top: 18px; margin-right: 7px; }
+
+/*notice style*/
+.article-container { border: 1px solid #cedce5; border-top: 2px solid #3a90d7; padding: 28px; width: 944px; background-repeat: repeat-x; }
+.article-container .article-list { padding: 0px; margin: 0px; }
+.article-container .article-list li { border-bottom: 1px dashed #e5e5e5; font-size: 14px; line-height: 36px; color: #333333; overflow: hidden; }
+.article-container .article-list li .p_content { float: left; color: #333333; }
+.article-container .article-list li .p_content:hover { color: #f30; }
+.article-container .article-list li .p_time { color: #999; float: right; }
+.article-container .article_tile { text-align: center; }
+.article-container .article_tile h1 { font-size: 24px; color: #333333; }
+.article-container .article_tile span { font-size: 12px; color: #999999; }
+.article-container p { text-indent: 24px; font-size: 14px; line-height: 24px; margin-bottom: 30px; clear: both; }
+.article-container p.f_left { text-align: left; text-indent: 0px; }
+.article-container p.f_right { text-align: right; }
+.article-container p.f_bold { font-weight: bold; }
+.article-container p .fl_left { float: left; text-indent: 0; }
+
+.mod-k { *zoom: 1; margin-bottom: 10px; }
+.mod-k .hd { height: 33px; line-height: 33px; background: #deeefb; border: 1px solid #cddce5; border-bottom: 2px solid #3a90d7; }
+.mod-k .hd h2 { float: left; color: #333; font-size: 16px; font-weight: normal; }
+.mod-k .hd h2 i { float: left; width: 3px; height: 15px; overflow: hidden; background: #338ad1; margin: 10px 10px 0 10px; }
+.mod-k .bd { padding-top: 10px; *zoom: 1; }
+
+/* friend link */
+.friend-link { padding: 10px 0; }
+.friend-link .link-bd { overflow: hidden; }
+.friend-link .link-bd ul { margin: 0 -1px -1px 0; *margin-left: -1px; }
+.friend-link .link-bd li { float: left; width: 25%; }
+.friend-link .link-bd a { display: block; zoom: 1; padding: 0 15px; line-height: 39px; font-size: 14px; color: #333; margin: -1px 0 0 -1px; border: 1px solid #e5e5e5; }
+.friend-link .link-bd a:hover { background: #f1faff; color: #f30; }
+
+.steps-bar { width: 776px; height: 6px; font-size: 0; margin: 20px auto; background: url(/caipiaoimg/v1.0/images/uc-step-bg-four.png?20150205) no-repeat; *zoom: 1; }
+.steps-bar li { float: left; width: 194px; height: 6px; position: relative; _display: inline; }
+.steps-bar li.last { float: right; }
+.steps-bar li i { width: 22px; height: 22px; font: bold 12px/22px arial; color: #999; position: absolute; top: 50%; left: 50%; margin: -11px 0 0 -11px; overflow: hidden; background-position: 0 -52px; text-align: center; }
+.steps-bar li .des { display: block; margin-top: 20px; text-align: center; color: #999; font-size: 12px; position: absolute; width: 100%; }
+.steps-bar li.cur { background: url(/caipiaoimg/v1.0/images/uc-step-highBg24.png?20150205) no-repeat; }
+.steps-bar li.cur i { background-position: -23px -52px; color: #fff; }
+.steps-bar li.cur .des { color: #3a90d7; }
+
+.lay-find { min-height: 490px; height: auto !important; _height: 490px; border: 5px solid #f2f2f2; position: relative; padding: 0 15px; }
+.lay-find .hd { height: 45px; line-height: 45px; padding-top: 13px; border-bottom: 1px solid #eee; }
+.lay-find .hd .tit { padding-left: 47px; font-weight: normal; font-size: 20px; color: #333; }
+.lay-find .bd { padding: 30px 0 0; }
+
+.find-form { padding-top: 50px; *zoom: 1; }
+.find-form .form { padding-left: 225px; }
+.find-form .yz_area .inp_s { width: 172px; }
+.find-form .yz_area .a_pos { margin-left: 5px; }
+.find-form .spc-tip { padding-left: 344px; color: #999; }
+
+.find-success { padding-left: 355px; }
+.find-success .sc-tip { margin: 15px 0; font-family: 'Microsoft Yahei'; font-size: 20px; color: #333; font-weight: bold; }
+.find-success .sc-tip .icon { float: left; margin-right: 10px; }
+.find-success .con { font-size: 14px; }
+.find-success p { padding-left: 40px; }
+
+.mail-alert { color: #333; font-size: 14px; line-height: 26px; text-align: center; }

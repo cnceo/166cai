@@ -1,0 +1,105 @@
+@charset "UTF-8";
+/* caipiao Lottery Custom styles
+*  @Version : 1.0
+*  @Author  : Rambo
+*  @Date    : 2014-11-10
+*  @Update  : 2014.11.11
+* */
+.lottery-results b { background: url(/caipiaoimg/v1.1/images/ball25x25.png?20150901) no-repeat; }
+
+.stage-detail .plan-state .t, .jc-inTable td .yzj .icon-gold { background: url(/caipiaoimg/v1.1/images/lottery-maps-cx.png?20150901) no-repeat; }
+
+.detail-container .lotteryTit { z-index: 2; position: relative; }
+.detail-container .lotteryTit .fr .det_pop { top: 95px !important; }
+.detail-container .userLotteryTab { top: auto; bottom: 0; }
+.detail-container .jc-box { border: none; }
+.detail-container .jc-box-hd { margin: -1px 0; border: 1px solid #e0e0e0; }
+
+.stage-detail .hd { height: 54px; line-height: 54px; }
+.stage-detail .hd .stage { padding-left: 20px; font: bold 16px 'Microsoft Yahei'; color: #333; }
+.stage-detail .hd .stage .bet-type { margin-left: 15px; }
+.stage-detail .hd .order-num { font-size: 14px; margin-left: 20px; }
+.stage-detail .plan-state { float: right; height: 34px; line-height: 34px; padding: 0 15px 0 88px; position: relative; background: #de1818; margin-top: 10px; margin-right: 15px; }
+.stage-detail .plan-state .t { height: 32px; line-height: 32px; position: absolute; left: 1px; top: 1px; width: 69px; padding-right: 5px; text-align: center; color: #be0000; background-position: 0 -50px; }
+.stage-detail .plan-state .state { font-size: 14px; color: #fff; font-weight: bold; }
+.stage-detail .number-game { padding: 5px 0; }
+.stage-detail .number-game ul { *width: expression(eval(this.offsetWidth)); }
+.stage-detail .number-game li { overflow: hidden; line-height: 30px; border-bottom: 1px dashed #e0e0e0; padding-left: 5px; }
+.stage-detail .number-game li em { color: #333; line-height: 30px; font: bold 14px Arial; margin-left: 10px; }
+.stage-detail .number-game p { padding: 10px 0; }
+.stage-detail .number-game a { font-size: 14px; text-decoration: underline; }
+
+.stage-table { position: relative; *zoom: 1; margin: -1px; }
+.stage-table table { width: 100%; table-layout: fixed; }
+.stage-table table .s-th, .stage-table table .s-td { border: 1px solid #e0e0e0; height: 50px; }
+.stage-table table .s-th { background: #f9f9f9; font-weight: normal; }
+.stage-table table .s-td { padding: 0 14px; }
+.stage-table table .s-td .page { margin-bottom: 20px; }
+.stage-table table .process-td { height: 106px; }
+.stage-table table .money i { font-weight: normal; color: #666; }
+.stage-table table .money b { font-weight: bold; font-size: 14px; color: #333; }
+.stage-table table .startup { font-size: 14px; font-weight: bold; color: #333; }
+.stage-table table .startup .spec { margin: 0 4px; font-family: arial; }
+
+.process-order { width: 750px; margin: 0 auto; }
+.process-order .node, .process-order .proce { float: left; position: relative; height: 14px; }
+.process-order .pro-in { position: absolute; left: 0; top: 0; height: 14px; width: 100%; background-image: url(/caipiaoimg/v1.1/images/state-bg.png?20150901); background-repeat: no-repeat; }
+.process-order .node { width: 10px; }
+.process-order .node .wait { background-position: -231px 0px; }
+.process-order .node .ready { background-position: -231px -38px; }
+.process-order .proce { width: 226px; border: solid #fff; border-width: 0 5px; }
+.process-order .proce .wait { background-position: 0 0; }
+.process-order .proce .doing { background-position: 0 -19px; color: #360; }
+.process-order .proce .ready { background-position: 0 -38px; }
+.process-order .tx1 { height: 20px; margin-bottom: 16px; }
+.process-order .tx3 { color: #999; line-height: 15px; }
+.process-order .wait .tx2 { color: #999; }
+.process-order ul { position: absolute; margin-top: -20px; text-align: center; }
+.process-order ul li { color: #333; }
+.process-order .proce ul { z-index: 1; width: 226px; }
+.process-order .node ul { z-index: 1; width: 100px; margin-left: -45px; }
+
+.lottery-results td { font-size: 0; }
+.lottery-results b { display: inline-block; width: 25px; height: 25px; margin-right: 6px; text-align: center; color: #fff; font: 600 14px/25px arial; background-position: 0 0; *display: inline; *zoom: 1; }
+
+.jc-inTable { margin: 10px 0; border-left: 1px solid #deeefb; border-top: 1px solid #deeefb; }
+.jc-inTable th, .jc-inTable td { padding: 8px; border-right: 1px solid #deeefb; border-bottom: 1px solid #deeefb; color: #333; text-align: center; }
+.jc-inTable th { font-weight: normal; }
+.jc-inTable th.last { border-right-color: #deeefb; }
+.jc-inTable thead th, .jc-inTable .th-bg-fix th, .jc-inTable .th-bg-fix td { border-right-color: #fff; background-color: #deeefb; }
+.jc-inTable td .wzj { color: #999; }
+.jc-inTable td .ddkj { color: #6dbf67; }
+.jc-inTable td .yzj { font-weight: 600; color: #be0000; }
+.jc-inTable td .yzj .icon-gold { display: inline-block; width: 22px; height: 19px; margin-right: 5px; background-position: -40px -100px; vertical-align: middle; *display: inline; *zoom: 1; }
+.jc-inTable .matches { text-align: left; line-height: 1.8; }
+.jc-inTable .matches b { padding: 2px 4px; background: #e8e8e8; font-weight: normal; }
+.jc-inTable .text-vertical span { display: block; width: 1em; margin: 0 auto; }
+.jc-inTable .num-winners { color: #be0000; }
+.jc-inTable-scroll-body { max-height: 380px; margin: -10px 0 20px 0; overflow-y: auto; overflow-x: hidden; border-bottom: 1px solid #deeefb; position: relative; *zoom: 1; font-family: tahoma,arial,'Hiragino Sans GB',\5b8b\4f53,sans-serif; _height: expression(this.offsetHeight > 380 ? "380px" : "auto"); }
+.jc-inTable-scroll-body .jc-inTable { margin: 0 0 -1px 0; }
+
+.meth { padding: 0px 0 10px; }
+.meth span { margin-right: 10px; }
+
+/* 竞彩页面的 type-link 宽度 */
+.jc-detail-container .bet-type-link { max-width: 100%; }
+
+.jc-sg .lotteryTit .fr { padding-top: 64px; }
+.jc-sg .lotteryTit .fr p { margin-top: -60px; }
+.jc-sg .lotteryTable { width: 978px; }
+.jc-sg .lotteryTable th { height: 32px; }
+.jc-sg .lotteryTable td { height: 30px; }
+.jc-sg .bet-type-link { max-width: 100%; }
+.jc-sg .userLotteryBox { padding: 10px; width: 978px; }
+.jc-sg .userLotteryBox .simu-select { width: 86px; }
+.jc-sg .userLotteryOn { margin-bottom: 10px; padding-left: 8px; }
+.jc-sg .userLotteryOn strong { float: left; line-height: 22px; font-weight: normal; padding-right: 10px; }
+
+.detail-hist .userLotteryon b { color: #333; }
+.detail-hist .userLotteryBox { width: auto; padding: 10px; }
+.detail-hist .userLotteryTable { width: auto; padding-bottom: 0; }
+.detail-hist .jc-inTable { width: 100%; }
+.detail-hist .btn-group { text-align: right; }
+
+.stage-detail-tips { position: relative; *zoom: 1; margin: 0 -1px -1px; padding: 8px 20px; border: 1px solid #e0e0e0; color: #999; }
+.stage-detail-tips h5 { font-weight: normal; color: #666; }

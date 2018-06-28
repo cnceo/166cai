@@ -1,0 +1,28 @@
+/* CSS Document */
+body{ font-family: "Adobe 黑体 Std",Verdana, Geneva, sans-serif; background:#FFF url(../../images/migrate/body.png);}
+#dialogLeft{ position:absolute; top:200px; left:-542px; opacity:0; z-index:99;}
+#dialogRight{ position:absolute; top:-860px; right:1%; width:594px; height:680px; background:url(../../images/migrate/bg_dialog.png) top left no-repeat; opacity:0;}
+ul{ height:65px; display:none;}
+ul li{ height:65px; padding-left:70px; font-size:17.21px; font-weight:bold; color:#332f2f;}
+ul li a{ text-decoration:none; color:#0d77ae;}
+.message img{ float:left; margin:10px 0 0 120px; display:inline;}
+.dialogMessage{ width:450px; position:absolute; top:180px; left:75px;}
+.mel{ background:url(../../images/migrate/icon01.png) no-repeat;}
+.mer{ background:url(../../images/migrate/icon02.png) 390px 0 no-repeat;}
+.mel li{ background:url(../../images/migrate/icon05.png) 45px 12px no-repeat;}
+.mer li{ background:url(../../images/migrate/icon06.png) 130px 12px no-repeat;}
+.melPosition{ position:relative;}
+.melPosition img{ position:absolute; top:14px; left:60px;}
+.merPosition{ position:relative;}
+.merPosition img{ position:absolute; top:14px; left:140px;}
+.singleLeftText{ padding:28px 0 0 80px;}
+.pluralLeftText{ padding:20px 0 0 110px;}
+.pluralRightText{ padding:20px 0 0 150px;}
+.pluralImgRightText{ padding:20px 0 0 190px;}
+.btn{ width:450px; position:absolute; top:600px; left:75px; text-align:center;}
+.btn p{ display:inline; float:left; margin-left:15px;}
+.btn span{ padding:10px 0; _padding:5px 0; font-size:17.21px; font-weight:bold; color:#332f2f;}
+.btn p a{ display:block; width:194px; height:60px;}
+.btnL a{ background:url(../../images/migrate/bg03.png) no-repeat;}
+.btnR a{ background:url(../../images/migrate/btn02.png) no-repeat;}
+.btnC a{ display:block; width:404px; height:58px; background:url(../../images/migrate/btn01.png) no-repeat; position:absolute; left:15px; top:100px;}

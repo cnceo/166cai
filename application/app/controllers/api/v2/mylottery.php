@@ -1,0 +1,625 @@
+<?php
+
+defined('BASEPATH') or die('No direct script access allowed');
+
+/*
+ * APP 用户账户明细、投注记录数据接口
+ * @date:2016-01-18
+ */
+class mylottery extends MY_Controller
+{
+    // V1.0【账户明细】订单类型
+    private $lotteryType = array(
+        0 => 'all',     // 账户明细
+        1 => '1',       // 购彩记录
+        2 => '0',       // 充值记录
+        3 => 'withdraw', // 提款记录
+        4 => '2',       // 中奖记录
+    );
+
+    // V1.0【投注记录】订单类型
+    public $betType = array(
+        '1' => '',      // 全部
+        '2' => '2000',  // 已中奖
+        '3' => '500',    // 待开奖
+    );
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('wallet_model', 'Wallet');
+        $this->load->model('order_model', 'Order');
+        $this->load->library('BetCnName');
+        $this->versionInfo = $this->getRequestHeaders();
+    }
+
+    public function index()
+    {
+        $result = array(
+            'status' => '1',
+            'msg' => '通讯成功',
+            'data' => $this->getRequestHeaders(),
+        );
+        echo json_encode($result);
+    }
+
+    /*
+     * 账户明细列表信息接口
+     * @date:2016-01-18
+     */
+    public function getMyLotteryList()
+    {
+        $data = $this->strCode($this->input->post('data'));
+        $data = json_decode($data, true);
+
+         //调试
+//         $data = array(
+//             'uid' => '1024',
+//             'page' => '2',
+//             'number' => '10',
+//             'ctype' => '0',
+//         );
+
+        // 参数检查
+        if (empty($data['uid']) || empty($data['page']) || empty($data['number'])) {
+            $result = array(
+                'status' => '0',
+                'msg' => '缺少必要参数',
+                'data' => '',
+            );
+            echo json_encode($result);
+            exit();
+        }
+
+        $ltype = $this->lotteryType;
+        if (isset($ltype[$data['ctype']])) {
+            $ctype = $ltype[$data['ctype']];
+        } else {
+            $result = array(
+                'status' => '0',
+                'msg' => '缺少必要参数',
+                'data' => '',
+            );
+            echo json_encode($result);
+            exit();
+        }
+
+        $data['page'] = max(1, $data['page']);
+        $cons = array(
+            'uid' => $data['uid'],
+            'ctype' => $ctype,
+        );
+
+        $details = $this->Wallet->getAllTradeDetail($cons, $data['page'], $data['number']);
+        $info = $this->getInfoList($details);
+
+        $lotteryInfo = array();
+        if (!empty($info['orders'])) {
+            foreach ($info['orders'] as $key => $items) {
+                $lotteryInfo[$key]['trade_no'] = $items['trade_no'];
+                if ($items['status'] == 3) {
+                    $lotteryInfo[$key]['ctypeName'] = wallet_ctype($items['ctype'], $items['additions']);
+                    if (strstr($items['content'], '发起合买') || strstr($items['content'], '参与合买')) {
+                        $lotteryInfo[$key]['ctypeName'] = wallet_ctype($items['ctype'], $items['additions']).'('.mb_substr($items['content'], 0, 4).')';
+                    }
+                    if ($items['ctype'] == 3 || $items['ctype'] == 9) {
+                        $lotteryInfo[$key]['ctypeName'] = wallet_ctype($items['ctype'], $items['additions']).'(合买)';
+                    }
+                    if ($items['ctype'] == 2) {
+                        $lotteryInfo[$key]['ctypeName'] = wallet_ctype($items['ctype'], $items['additions'])."({$items['content']})";
+                    }
+                } elseif($items['status'] == 4 && $items['ctype'] == 1) {
+                    $lotteryInfo[$key]['ctypeName'] = wallet_ctype($items['ctype'], $items['additions']).'(定制跟单)';
+                } else {
+                    $lotteryInfo[$key]['ctypeName'] = wallet_ctype($items['ctype'], $items['additions']);
+                }
+                $lotteryInfo[$key]['lid'] = $items['lid'];
+                $lotteryInfo[$key]['color'] = $items['balance'] > 0 ? 'red' : 'green';
+                $lotteryInfo[$key]['balance'] = $items['balance'];
+                $lotteryInfo[$key]['date'] = date('m-d H:i', strtotime($items['created']));
+                $lotteryInfo[$key]['umoney'] = '余额'.number_format(ParseUnit($items['umoney'], 1), 2);
+                $lotteryInfo[$key]['detailUrl'] = $items['tradeDetailUrl'];
+            }
+        }
+
+        $result = array(
+            'status' => '1',
+            'msg' => '通讯成功',
+            'data' => $lotteryInfo,
+        );
+        echo json_encode($result);
+    }
+
+    /*
+     * 账户明细列表信息格式处理
+     * @date:2016-01-18
+     */
+    private function getInfoList($details)
+    {
+        // http
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? 'https:' : 'http:';
+
+        $info['income'] = $details['income'];
+        if (empty($details['datas'])) {
+            $info['orders'] = array();
+        } else {
+            foreach ($details['datas'] as &$order) {
+                $balance = $order['income'] - $order['expend'];
+                $sign = ($balance > 0) ? '+' : '';
+                $order['balance'] = $sign.number_format(ParseUnit($balance, 1), 2);
+
+                if ($order['ctype'] == 1) {
+                    $token = $this->strCode(json_encode(array(
+                        'uid' => $order['uid'],
+                    )), 'ENCODE');
+                    if ($order['status'] == 3 || $order['status'] == 4) {
+                        $order['tradeDetailUrl'] = $protocol . $this->config->item('pages_url') . 'app/hemai/detail/hm' . $order['orderId']
+                                . '/' . urlencode($token);
+                    } else {
+                        $order['tradeDetailUrl'] = $protocol . $this->config->item('pages_url') . 'app/order/detail/' . $order['orderId']
+                                . '/' . urlencode($token);
+                    }
+                    $order['lid'] = $order['additions'];
+                } elseif (in_array($order['ctype'], array(12, 13))) {
+                    $token = $this->strCode(json_encode(array(
+                        'uid' => $order['uid'],
+                    )), 'ENCODE');
+                    $order['tradeDetailUrl'] = $protocol.$this->config->item('pages_url').'app/chase/detail/'.$order['orderId']
+                        .'/'.urlencode($token);
+                    $order['lid'] = $order['additions'];
+                }elseif (in_array($order['ctype'], array(16, 17))) {
+                    $token = $this->strCode(json_encode(array(
+                        'uid' => $order['uid'],
+                    )), 'ENCODE');
+                    $order['tradeDetailUrl'] = $protocol . $this->config->item('pages_url') . 'app/hemai/gdetail/gd' . $order['orderId']
+                            . '/' . urlencode($token);                    
+                } else {
+                    $tradeToken = $this->strCode(json_encode(array(
+                        'uid' => $order['uid'],
+                        'tradeNo' => $order['trade_no'],
+                    )), 'ENCODE');
+                    $order['tradeDetailUrl'] = $protocol.$this->config->item('pages_url').'app/trade/detail/'.urlencode($tradeToken);
+                    $order['lid'] = '0';
+                }
+            }
+            $info['orders'] = $details['datas'];
+        }
+
+        return $info;
+    }
+
+    /*
+     * 投注记录信息接口
+     * @date:2015-07-17
+     */
+    public function getMyBetList()
+    {
+        $data = $this->strCode($this->input->post('data'));
+        $data = json_decode($data, true);
+
+         //调试
+//         $data = array(
+//             'uid' => '1024',
+//             'baseType' => '0',   // 全部
+//             'subType' => '0',    // 全部
+//             'page' => 4,
+//             'number' => 10
+//         );
+
+        $result = $this->getBetV2($data);
+
+        echo json_encode($result);
+    }
+
+    /*
+     * 投注记录信息接口
+     * @version:V1.1
+     * @date:2016-03-09
+     */
+    public function getBetV2($data)
+    {
+        // 投注筛选类型
+        $betType = array(
+            '0' => array(
+                'orderType' => '-1',
+                'status' => array(
+                    '0' => '',      // 全部订单 - 全部订单
+                    '1' => '2000',  // 全部订单 - 已中奖
+                    '2' => '500',   // 全部订单 - 待中奖
+                    '3' => '10',    // 全部订单 - 待付款
+                ),
+            ),
+            '1' => array(
+                'orderType' => '0',
+                'status' => array(
+                    '0' => '',      // 自购订单 - 全部自购订单
+                    '1' => '2000',  // 自购订单 - 已中奖
+                    '2' => '500',   // 自购订单 - 待中奖
+                    '3' => '10',    // 全部订单 - 待付款
+                ),
+            ),
+            '2' => array(
+                'orderType' => '1',
+                'status' => array(
+                    '0' => '',       // 追号订单 - 全部追号订单
+                    '1' => 'is_chase',  // 追号订单 - 追号中
+                    '2' => 'chase_over', // 追号订单 - 追号完成
+                    '3' => 'chase_win',  // 追号订单 - 已中奖
+                ),
+            ),
+        );
+
+        if (empty($data['uid']) || empty($data['page']) || empty($data['number']) || !isset($betType[$data['baseType']]['status'][$data['subType']])) {
+            $result = array(
+                'status' => '0',
+                'msg' => '缺少必要参数',
+                'data' => '',
+            );
+
+            return $result;
+        }
+
+        $data['page'] = max(1, $data['page']);
+
+        // 追号订单
+        if ($data['baseType'] == '2') {
+            // 组装查询条件
+            $cons = array(
+                'uid' => $data['uid'],
+                'status' => $betType[$data['baseType']]['status'][$data['subType']],
+            );
+
+            // 彩种筛选
+            if (!empty($data['lid'])) {
+                $cons['lid'] = intval($data['lid']);
+            }
+
+            // 默认展示未删除的订单
+            $cons['is_hide'] = 0;
+            if($data['all']) unset($cons['is_hide']);
+
+            // 根据查询条件查询
+            $this->load->model('chase_order_model');
+            $odatas = $this->chase_order_model->getChases($cons, $data['page'], $data['number']);
+
+            // 获取订单状态
+            $orderStatus = $this->chase_order_model->getStatus();
+
+            // 自购订单格式处理
+            $orderInfo = $this->getChaseListFormat($data['uid'], $odatas['datas'], $orderStatus);
+        } else {
+            // 组装查询条件
+            $cons = array(
+                'uid' => $data['uid'],
+            );
+
+            $orderType = $betType[$data['baseType']]['orderType'];
+            if ($orderType >= 0) {
+                $cons['orderType'] = $orderType;
+            }
+
+            $status = $betType[$data['baseType']]['status'][$data['subType']];
+            if ($status) {
+                $cons['status'] = $status;
+            }
+
+            // 彩种筛选
+            if (!empty($data['lid'])) {
+                $cons['lid'] = intval($data['lid']);
+            }
+            $cons['start'] = date('Y-m-d', strtotime('-3 month'));
+            $cons['end'] = date('Y-m-d 23:59:59', time());
+            $cons['nopay'] = false;
+            if ($data['subType'] == 3)
+            {
+                $cons['nopay'] = 1;
+            }
+            $cons['buyType'] = '0';
+            if ($data['subType'] == 1)
+            {
+                $cons['marginonly'] = 1;
+            }
+            // 默认展示未删除的订单
+            $cons['is_hide'] = 0;
+            if($data['all']) unset($cons['is_hide']);
+            // 根据查询条件查询
+            $odatas = $this->Order->getAllOrder($cons, ($data['page'] - 1) * $data['number'].','.$data['number']);
+            // 自购订单格式处理
+            $orderInfo = $this->getBetListFormat($data['uid'], $odatas['datas']);
+        }
+
+        $result = array(
+            'status' => '1',
+            'msg' => '通讯成功',
+            'data' => $orderInfo,
+        );
+
+        return $result;
+    }
+
+    /*
+     * 投注记录普通投注格式
+     * @date:2016-03-09
+     */
+    public function getBetListFormat($uid, $orders)
+    {
+        // http
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? 'https:' : 'http:';
+
+        // 组装数据
+        $orderInfo = array();
+
+        $orderName = array(
+            41 => array('发起合买', '发起合买'),
+            42 => array('参与合买', '定制跟单'),
+            1 => '追号',
+            '' => ''
+        );
+        if (!empty($orders)) {
+            $this->load->library('BetCnName');
+            $token = $this->strCode(json_encode(array(
+                'uid' => $uid,
+                    )), 'ENCODE');
+            foreach ($orders as $key => $items) {
+                $orderInfo[$key]['orderId'] = $items['orderId'];
+                $orderInfo[$key]['lid'] = $items['lid'];
+                $orderInfo[$key]['issue'] = ($items['lid'] == BetCnName::JCZQ || $items['lid'] == BetCnName::JCLQ) ? '' : $items['issue'];
+                $orderInfo[$key]['cnName'] = BetCnName::$BetCnName[$items['lid']];
+                $orderInfo[$key]['playType'] = ($items['lid'] == BetCnName::PLS || $items['lid'] == BetCnName::FCSD) ? BetCnName::$playCnName[$items['lid']][$items['playType']] : null;
+                $orderInfo[$key]['date'] = date('m-d H:i', strtotime($items['created']));
+                if (!in_array($items['orderType'], array(41, 42))) {
+                    $status = parse_order_status($items['status'], $items['my_status']);
+                    $orderInfo[$key]['redTag'] = ($items['margin'] > 0 || $status == '待付款') ? '1' : '0';
+                    $orderInfo[$key]['statusMsg'] = ($items['margin'] > 0) ? '中奖'.number_format(ParseUnit($items['margin'] + $items['add_money'], 1), 2).'元' : $status;
+                    $orderInfo[$key]['money'] = number_format(ParseUnit($items['money'], 1), 2);
+                    // orderType 1、6 追号
+                    $orderInfo[$key]['orderType'] = $items['orderType'] ? '1' : '';
+                    $orderInfo[$key]['orderTypeName'] = $orderName[$orderInfo[$key]['orderType']];
+                    $orderInfo[$key]['is_hide'] = ($items['is_hide'] & 1) ? '1' : '0';
+                    $orderInfo[$key]['orderDetailUrl'] = $protocol.$this->config->item('pages_url').'app/order/detail/'.$items['orderId'].'/'.urlencode($token);
+                } else {
+                    $status = ($items['status'] == 40) ? '等待出票' : parse_order_status($items['status'], $items['my_status']);
+                    $orderInfo[$key]['money'] = number_format(ParseUnit(($items['orderType'] == 41 && strtotime($items['endTime']) < time()) ? ($items['buyMoney'] + (int)$items['guarantee']): $items['buyMoney'], 1), 2);
+                    $orderInfo[$key]['redTag'] = ($items['margin'] > 0 || $status == '待付款' || ($items['status'] == '2000' && in_array($items['my_status'], array(1, 3)))) ? '1' : '0';
+                    $orderInfo[$key]['statusMsg'] = ($items['margin'] > 0) ? '中奖'.number_format(ParseUnit($items['margin'], 1), 2).'元' : ($items['status'] == '2000' && in_array($items['my_status'], array(1, 3)) ? '中奖不足0.01元' : $status);
+                    $orderInfo[$key]['orderType'] = $items['orderType'];
+                    $orderInfo[$key]['orderTypeName'] = $orderName[$orderInfo[$key]['orderType']][$items['subOrderType']];     
+                    $orderInfo[$key]['is_hide'] = ($items['is_hide'] & 1) ? '1' : '0';
+                    $orderInfo[$key]['orderDetailUrl'] = $protocol.$this->config->item('pages_url').'app/hemai/detail/hm'.$items['orderId'].'/'.urlencode($token);
+                }
+            }
+        }
+
+        return $orderInfo;
+    }
+
+    /*
+     * 投注记录追号投注格式
+     * @date:2016-03-09
+     */
+    public function getChaseListFormat($uid, $orders, $orderStatus)
+    {
+        // http
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? 'https:' : 'http:';
+
+        // 组装数据
+        $orderInfo = array();
+
+        if (!empty($orders)) {
+            $this->load->library('BetCnName');
+            foreach ($orders as $key => $items) {
+                $orderInfo[$key]['chaseId'] = $items['chaseId'];
+                $orderInfo[$key]['lid'] = $items['lid'];
+                $orderInfo[$key]['cnName'] = BetCnName::$BetCnName[$items['lid']];
+                $orderInfo[$key]['money'] = ParseUnit($items['money'], 1).'元';
+                $orderInfo[$key]['date'] = date('m-d H:i', strtotime($items['created']));
+                $orderInfo[$key]['progress'] = $this->getChaseProgress($items, $orderStatus);
+                $orderInfo[$key]['redTag'] = ($items['bonus'] > 0) ? '1' : '0';
+                $orderInfo[$key]['statusMsg'] = $this->getChaseStatus($items, $orderStatus);
+                $orderInfo[$key]['is_hide'] = ($items['is_hide'] & 1) ? '1' : '0';
+                $token = $this->strCode(json_encode(array(
+                        'uid' => $uid,
+                    )), 'ENCODE');
+                $orderInfo[$key]['orderDetailUrl'] = $protocol.$this->config->item('pages_url').'app/chase/detail/'.$items['chaseId'].'/'.urlencode($token);
+            }
+        }
+
+        return $orderInfo;
+    }
+
+    /*
+     * 追号大订单进度
+     * @date:2016-03-09
+     */
+    public function getChaseProgress($chaseInfo, $orderStatus)
+    {
+        $msg = chase_status($chaseInfo['status'], $orderStatus);
+
+        if ($chaseInfo['status'] >= $orderStatus['is_chase']) {
+            $msg .= '('.$chaseInfo['chaseIssue'].'/'.$chaseInfo['totalIssue'].')';
+        }
+
+        return $msg;
+    }
+
+    // 获取追号进度
+    public function getChaseStatus($items, $orderStatus)
+    {
+        $status = '';
+        if ($items['status'] == $orderStatus['is_chase'] && $items['bonus'] == 0) {
+            $status = '静待大奖';
+        } elseif ($items['status'] >= $orderStatus['is_chase']) {
+            if ($items['bonus'] > 0) {
+                $status = '中奖'.ParseUnit($items['bonus'], 1).'元';
+            } else {
+                $status = '未中奖';
+            }
+        }
+
+        return $status;
+    }
+
+    // 我的投注 - 显示近1月内最近20条已付款的投注记录
+    public function myBetList()
+    {
+        $data = $this->strCode($this->input->post('data'));
+        $data = json_decode($data, true);
+
+        /*
+        $data = array(
+            'uid'       =>  '1',
+            'lid'       =>  '21406',
+            'number'    =>  '20',
+        );
+        */
+
+        if(empty($data['uid']) || empty($data['lid']))
+        {
+            $result = array(
+                'status'    =>  '0',
+                'msg'       =>  '缺少必要参数',
+                'data'      =>  array(),
+            );
+            die(json_encode($result));
+        }
+
+        $cons = array(
+            'uid'       =>  $data['uid'],
+            'lid'       =>  $data['lid'],
+            'created'   =>  date('Y-m-d', strtotime('-1 month')),
+            'number'    =>  $data['number'] ? intval($data['number']) : '20',
+        );
+        $info = $this->Order->getMyBetListByLid($cons);
+
+        $list = array();
+        if(!empty($info))
+        {
+            $this->load->library('GpBetCodes');
+            foreach ($info as $items) 
+            {
+                $data = array(
+                    'issue'     =>  $items['issue'],
+                    'codes'     =>  $this->gpbetcodes->index($items['lid'], $items['codes']),
+                    'date'      =>  date('m-d H:i', strtotime($items['created'])),
+                    'money'     =>  ParseUnit($items['money'], 1) . '元',
+                    'statusMsg' =>  ($items['margin'] > 0) ? '中奖' . ParseUnit($items['margin'], 1) . '元' : parse_order_status($items['status'], $items['my_status']),
+                    'redTag'    =>  ($items['margin'] > 0) ? '1' : '0',
+                );
+                array_push($list, $data);
+            }
+        }
+
+        $result = array(
+            'status'    =>  '1',
+            'msg'       =>  '通讯成功',
+            'data'      =>  $list,
+        );
+        die(json_encode($result));
+    }
+
+    // 我的投注 - 彩种上一期中奖检查
+    public function checkWinOrder()
+    {
+        $data = $this->strCode($this->input->post('data'));
+        $data = json_decode($data, true);
+
+        /*
+        $data = array(
+            'uid'       =>  '1',
+            'lid'       =>  '21406',
+        );
+        */
+
+        if(empty($data['uid']) || empty($data['lid']))
+        {
+            $result = array(
+                'status'    =>  '0',
+                'msg'       =>  '缺少必要参数',
+                'data'      =>  '',
+            );
+            die(json_encode($result));
+        }
+
+        // 上一期期次
+        $this->load->model('cache_model','Cache');
+        $issueInfo = $this->Cache->getIssueInfo($data['lid']);
+
+        $count = 0;
+        if(!empty($issueInfo['lIssue']['seExpect']))
+        {
+            // 从库查询
+            $count = $this->Order->countWinOrder($data['uid'], $data['lid'], $issueInfo['lIssue']['seExpect']);
+        }
+        
+        if($count > 0)
+        {
+            $result = array(
+                'status'    =>  '1',
+                'msg'       =>  '上一期已中奖',
+                'data'      =>  array(
+                    'win'       =>  '1',
+                    'cIssue'    =>  $issueInfo['cIssue']['seExpect'],
+                    'lIssue'    =>  $issueInfo['lIssue']['seExpect'],
+                ),
+            );
+        }
+        else
+        {
+            $result = array(
+                'status'    =>  '1',
+                'msg'       =>  '上一期未中奖',
+                'data'      =>  array(
+                    'win'       =>  '0',
+                    'cIssue'    =>  $issueInfo['cIssue']['seExpect'],
+                    'lIssue'    =>  $issueInfo['lIssue']['seExpect'],
+                )
+            );
+        }
+        die(json_encode($result));
+    }
+
+    // 投注记录彩种选择预留配置项
+    public function getMyLotteryConfig()
+    {
+        // 0 全部 2 追号
+        $type = $this->input->get('type', true);
+        $type = $type ? intval($type) : '0';
+        
+        $this->config->load('lottery');
+        $lotterys = $this->config->item('betList');
+
+        $list = array();
+        if(!empty($lotterys))
+        {
+            foreach ($lotterys as $items) 
+            {
+                if($type > 0)
+                {
+                    if($items['ctype'] & $type)
+                    {
+                        $data = array(
+                            'lid'   =>  $items['lid'],
+                            'lname' =>  $items['lname'],
+                        );
+                        array_push($list, $data);
+                    }
+                }
+                else
+                {
+                    $data = array(
+                        'lid'   =>  $items['lid'],
+                        'lname' =>  $items['lname'],
+                    );
+                    array_push($list, $data);
+                }
+            }
+        }
+
+        $result = array(
+            'status'    =>  '1',
+            'msg'       =>  'success',
+            'data'      =>  $list
+        );
+        die(json_encode($result));
+    }
+}

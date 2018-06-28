@@ -1,0 +1,29 @@
+/* 开奖公告CSS */
+
+/* 双色球 快3 大乐透 竞彩足球 */
+.drawingSSQ{ width:493px; height:118px; margin-bottom:10px;}
+.drawingSSQ .fl{ width:92px; text-align:center; padding-top:10px;}
+.drawingSSQ .fl h3{ font-size:16px; font-weight:inherit; padding-top:5px;}
+.drawingSSQ .fr{ width:386px;}
+.drawingSSQ .fr p{ padding:8px 0 0; height:33px;}
+.drawingSSQ .fr p strong{ color:#666; float:left; display:inline-block; font-weight:normal;}
+.drawingSSQ .fr p span{ float:right; display:inline-block; padding-right:5px;}
+.drawingSSQ .fr p span a{ margin:0 5px; color:#c9141b;}
+.drawingSSQ .fr ul{ width:100%; height:50px;}
+.drawingSSQ .fr ul.rj-award-nums li.numRed, .drawingSSQ .fr ul.sfc-award-nums li.numRed{
+    background: #fff;
+    color: #333;
+    margin: 15px 10px 0 0;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+}
+.drawingSSQ .fr ul li{ float:left; margin-right:5px; width:35px; height:35px; line-height:35px; color:#fff; font-size:16px; font-weight:bold; text-align:center; cursor:pointer;}
+.drawingSSQ .fr ul li.numRed{ background:#EE2B4B; border-radius:50%;}
+.drawingSSQ .fr ul li.numBlue{ background:#2991CE; border-radius:50%;}
+.drawingSSQ .fr h4{ color:#666; font-weight:inherit;}
+.drawingSSQ .fr dl{ width:100%; margin-top:-5px;}
+.drawingSSQ .fr dd{ float:left;}
+.drawingSSQ .fr dd a{ width:105px; height:30px; line-height:30px; text-align:center; color:#666; font-size:14px; background:#C7D0D5; border:1px solid #96A0A1; border-radius:2px; margin:0 18px 10px 0; display:inline-block; font-weight:bold;}
+.drawingSSQ .fr dd a:hover{ text-decoration:none;}
+.drawingSSQ .fr dd a.selected{  background:#EF2C4C; border:1px solid #E12641; border-radius:2px; color:#fff;}

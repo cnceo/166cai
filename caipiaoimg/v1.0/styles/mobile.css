@@ -1,0 +1,13 @@
+/* CSS Document */
+
+.indexAdvertise{ min-width:1000px; _width:expression((document.documentElement.clientWidth||document.body.clientWidth)<1000?"1000px":""); background-image:url(../images/mobileLottery/datu-.png?t=0902); background-position:center; background-repeat:no-repeat; background-color:#ecebed; width:100%; height:480px; margin:6px 0; position:relative;}
+.indexLink{ width:300px; margin:auto; height:250px; left:62%; bottom: 0; position:absolute;}
+
+
+/* 容器 */
+.mobileLottery{ min-width:1000px; _width:expression((document.documentElement.clientWidth||document.body.clientWidth)<1000?"1000px":""); width:100%; background-color:#5bb4ed;}
+.buyWrap{ width:1000px; margin: 6px auto; overflow:hidden; min-height:500px;}
+.advertise{ clear:both; overflow:hidden; padding-top:20px; _padding-top:10px;/*IE6.0*/}
+.advertise img{ display:block;/*IE6.0*/}
+.middleLeft{ float:left;}
+.middleRight{ float:right;}

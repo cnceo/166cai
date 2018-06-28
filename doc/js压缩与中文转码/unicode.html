@@ -1,0 +1,27 @@
+<html>
+<head>
+<title> Unicode to Chinese </title>
+<meta name="Generator" content="EditPlus">
+</meta><meta name="Author" content="">
+</meta><meta name="Keywords" content="">
+</meta><meta name="Description" content="">
+<script language="javascript">
+function chinese2unicode() {
+	var objInChinese = document.getElementById("contentInChinese");
+	var strContent =objInChinese.value;
+	if (strContent==null||strContent.length==0) {
+		alert("please input chinese value");
+		return;
+	}
+	var strTest=strContent.replace(/[^\u0000-\u00FF]/g,function($0){return escape($0).replace(/(%u)(\w{4})/gi,"&@x$2")});
+	strTest=strTest.replace(/&@x/g,'\\u');
+	objInChinese.value=strTest;
+}
+</script>
+</meta></head>
+<body>
+<p>
+<textarea name="contentInChinese" id="contentInChinese" rows="20" cols="100"></textarea>
+<input type="button" name="btTransformToUnicode" value="Chinese2Unicode" onclick="chinese2unicode();"/>
+</p></body>
+</html>

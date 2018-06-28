@@ -1,0 +1,77 @@
+/*购彩引导*/
+/* 主内容区 */
+.indexWrap{ min-height:670px; overflow:hidden; position:relative; min-width:1000px;}
+
+/* 内容 */
+.index_wrap_center{ margin:0 auto; width:1000px; min-width:1000px; }
+
+/* 彩票内容区 */
+.lotterySohuWrap{ min-width:1000px; width:100%; height:363px; background-color:#e84242; }
+.lotteryWrap{ width:1000px; height:464px; margin:0 auto; position:relative; background:url(../images/sohu/main.png) no-repeat;}
+.lotteryBottom{ min-width:1000px; min-height:500px; width:100%; background:url(../images/sohu/bottom_bg.png) bottom center no-repeat;}
+.lotteryTit{width:1000px; margin:0 auto; padding-top:90px; }
+/*welcome*/
+.welcome { font-size:36px; color:#FFF; text-align:center; padding-top:30px;}
+.welcome span{ color:#000; margin: 0 20px;}
+/* 投注 */
+.lotteryOne{ width:746px; height:146px; margin:30px 0; background:#fff; border:5px solid #f18e8e; border-radius:2px; overflow:hidden; float:left;}
+.lotteryOneTit{ height:32px; width:100%; background:#fff; border-bottom:1px solid #e66e31;}
+.lotteryOneTit h2{ width:144px; line-height:32px; background:#251c1d; color:#fff; text-align:center; font-size:16px; float:left;}
+.lotteryOneTit ul{ float:left; padding-left:20px;}
+.lotteryOneTit ul li{ float:left; width:80px; text-align:center; font-size:15px; font-weight:bold; border-top:3px solid #fff; cursor:pointer;}
+.lotteryOneTit ul li em{ text-align:center; display:block; margin-top:-11px; color:#FFF;}
+.lotteryOneTit ul li span{ text-align:center; display:block; margin-top:-8px;}
+.lotteryOneTit ul li.selected{ border-top:3px solid #c6151b;}
+.lotteryOneTit ul li.selected em{ color:#c6151b;}
+.lotteryOneTit ul li.selected span{ color:#c6151b;}
+.lotteryOneTit p{ float:right; padding:8px 10px 0 0;}
+.lotteryOneTit p a{ font-weight:bold; color:#333; margin:0 3px;}
+.lotteryOneInfo{ width:100%;}
+.lotteryOneInfoA{ float:left; padding:10px 0 0; width:94px; text-align:center;}
+.lotteryOneInfoA p{ padding:5px 0 0;}
+.lotteryOneInfoB{ width:375px; float:left; padding-left:35px;}
+.lotteryOneInfoB ul{ padding:25px 0 0; width:100%; height:65px;}
+.lotteryOneInfoB li{ float:left; margin:0 7px; width:35px; height:35px; line-height:35px; color:#fff; font-size:16px; font-weight:bold; text-align:center; cursor:pointer;}
+.lotteryOneInfoB li.numRed{ width:36px; height:36px; background:#f64040; border-radius:50%;}
+.lotteryOneInfoB li.numBlue{ width:36px; height:36px; background:#2e9ade; border-radius:50%;}
+.lotteryOneInfoB p{ padding-left:10px;}
+.lotteryOneInfoC{ float:right;}
+.lotteryOneInfoC p{ float:left; margin:20px 5px 0 0;}
+.lotteryOneInfoC p a{ margin-left:3px; line-height:47px; text-align:center; font-size:16px; font-weight:bold; text-decoration:none;}
+.lotteryOneInfoC span{ display:block; margin:23px 0 0 75px;}
+.bwIn a{ display:block; width:61px; height:47px; color:#332B29; background:#E5E9EC; border-radius:2px;}
+.bwBel a{ display:block; width:112px; height:47px; color:#FBEEEE; background:#CC2229; border-radius:2px;}
+/* 彩票内容区end */
+
+/*二维码下载*/
+.download{ margin:30px 0; float:right; width:200px; height:130px; padding:8px; border:5px solid #f18e8e; border-radius:2px;}
+.download dl{}
+.download dl dt{ float:left; padding-top:10px;}
+.download dl dd{ color:#ea5504; font-size:14px;  text-align:center; padding-top:40px;}
+
+/*Come*/
+.indexCcomeWrap{ min-height:670px; overflow:hidden; position:relative; min-width:1000px; background:url(../images/sohu/souhu_bg.png) no-repeat;}
+.lotteryComeWrap{ width:1000px; height:464px; margin:0 auto; position:relative;}
+.sohuBtn{ margin:80px 0;}
+.aBtn a{ width:256px; height:64px; margin:auto; display:block; background:url(../images/sohu/button_sohu.png) no-repeat;}
+.registerFrom{ margin-top:50px;}
+.registerFrom a{ text-decoration:none; color:#3e89bf;}
+
+/*sohuError*/
+.indexWrap{ min-height:450px; overflow:hidden; position:relative; min-width:1000px;}
+.lotterySohuError { min-height:450px; overflow:hidden; position:relative; min-width:1000px; width:100%; background:url(../images/sohu/souhu_error_bg.png) no-repeat;}
+.sohuErrorWrap{ width:1000px; height:480px; margin:0 auto; position:relative;}
+.sohuErrorWrap p{ padding-top:80px; text-align:center; font-size:24px; color:#333;}
+
+.lottery-dlt {
+	display: none;
+}
+
+.ball {
+    transition: .3s;
+}
+
+.ball.rotate {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}

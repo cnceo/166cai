@@ -1,0 +1,82 @@
+/* 我的彩票CSS */
+
+/* 个人信息 */
+.userIinfo{ width:998px; height:146px; border:2px solid #d8e1e6; margin-bottom:10px;}
+.userIinfoImg{ float:left; text-align:center; margin:8px 10px; position: relative;}
+.userIinfoImg img{ border:2px solid #b5bdc0;}
+.userIinfoName{ float:left;}
+.userIinfoName h3{ padding:10px 0 5px; font-size:14px;}
+.userIinfoName h4{ font-size:14px;}
+.userIinfoName ul{ padding-top:20px;}
+.userIinfoName ul li{ width:54px; height:57px; float:left; margin:0 5px; background:url(../images/bg/userIcon.jpg) no-repeat 0 0; overflow:hidden; text-indent:-200px;}
+.userIinfoName ul li.userIconPhone{ background-position:3px 0;}
+.userIinfoName ul li.userIconEmail{ background-position:-70px 0;}
+.userIinfoName ul li.userIconCard{ background-position:-146px 0;}
+.userIinfoName ul li.userIconWeixin{ background-position:-222px 0;}
+.userIinfoName ul li.userIconQQ{ background-position:-298px 0;}
+.userIinfoName ul li.userIconLight{ background-position-y:-57px;}
+.userIinfo .fr{ width:420px; padding:0 20px 0 0; text-align:right;}
+.userIinfo .fr h1{ font-size:36px; color:#cb1419; padding:5px 0; }
+.userIinfo .fr h2{ font-size:14px; color:#1467ad; padding:5px 0; }
+.userIinfo .fr p a{ float:right; margin-left:10px; display:block; width:80px; height:40px; line-height:40px; text-align:center; font-size:16px; font-weight:bold; color:#ffffff; border-radius:2px;}
+.userIinfo .fr p a:hover{ text-decoration:none;}
+.topUp a{ background:#C9141B;}
+.withDrawals a{ background:#1666AB;}
+
+
+/* 彩票 */
+.userLottery{ width:100%; margin-bottom:10px;}
+.userLotteryTab{ height:31px; width:100%; border-bottom:2px solid #c9141b;}
+.userLotteryTab a{ display:inline-block; width:99px; text-align:center; height:31px; line-height:31px; font-size:16px; color:#666; background:#d8e1e6; font-weight:bold; float: left; margin-right: 1px;}
+.userLotteryTab a:hover{ text-decoration:none;}
+.userLotteryTab a.selected{ background:#c9141b; color:#fff;}
+.userLotteryBox{ border:2px solid #d8e1e6; border-top:none; width:996px; min-height:200px; padding-bottom:10px;}
+.userLotterySer{ padding:10px 5px;}
+.userLotterySer span{ width:88px; height:25px; line-height:25px; text-align:center; color:#666; margin:0 5px; display:inline-block; border:1px solid #b5bdc0; font-weight:bold; cursor:pointer;}
+.userLotterySer span.selected{ border:1px solid #c9141b; color:#c9141b;}
+.userLotterySer select{ height:25px; line-height:25px; min-width:88px;}
+.userLotteryTable{ width:978px; margin:0 auto;}
+.userLotteryTable th, .lotteryTable td{ height:40px; line-height:40px; border:1px solid #b5bdc0; text-align:center; color:#666;}
+.userLotteryTable th{ font-size:16px;}
+.userLotteryTable td{ font-size:12px;height: 40px;line-height: 40px;border: 1px solid #b5bdc0;text-align: center;color: #666;}
+.userLotteryTable td a{ margin:0 10px;}
+.userLotteryTable td a.userTextGreen{ color:#30a556;}
+.userLotteryTable td a.userTextRed{ color:#c6151d;}
+.userLotteryTable td a.userTextBlue{ color:#1665aa;}
+/* 翻页 */
+.buyPages{ text-align:center; padding:20px 0 0; height:50px;}
+.buyPages p{ padding-left:37%;}
+.buyPages span{ cursor:pointer; display:inline-block; margin:0 10px; width:70px; height:27px; line-height:27px; background:#000; color:#fff; font-size:14px; float:left;}
+.buyPages select{ height:27px; line-height:27px; min-width:80px; float:left;}
+
+/* table里展开 */
+.userLotteyTableOpen{ margin-top:-1px;}
+.userLotteyTableOpen th a{ display:inline-block;  width:58px; line-height:40px;}
+.userLotteyTableOpen th a.userTextGreen{ color:#30a556;}
+.userLotteyTableOpen th a.userTextRed{ color:#c6151d;}
+.userLotteyTableOpen th a.userTextBlue{ color:#1665aa;}
+.userLotteyTableOpen td a.userTextGray{ color:#666;}
+.userLotteyTableOpen tbody td{ background:#e8edf0; border-color:#d8e1e6;}
+.userLotteyTableOpen tfoot td a{ background:url(../images/bg/userArrDown.gif) no-repeat 95px 11px; display:inline-block; width:120px; line-height:40px;}
+.userLotteyTableOpen tbody, .userLotteyTableOpen tfoot{ display:none;}
+
+/* 账户信息 */
+.userAccount{ padding:10px 0 0;}
+.userAccountTable{ float:left; font-size:16px; font-weight:bold;}
+.userAccountTable th, .userAccountTable td{ height:40px; line-height:40px;}
+.userAccountTable th{ text-align:right; color:#b6bdc0;}
+.userAccountTable td{ padding-left:5px;}
+.userAccountTable td input{ width:170px; height:28px; line-height:28px; border:1px solid #a5c7ea; float:left;}
+.userFormYzm{ display:inline-block; width:121px; line-height:30px; color:#fff; background:url(../images/btn/userYzm.gif) no-repeat 0 0;text-align:center; color:#333; cursor:pointer; float:left; margin:0 5px; font-size:14px;}
+.userFormYzmOn{ color:#999;}
+.userAccountTable td a{ margin:0 5px;}
+.wordRed{ color:#c9141b;}
+.wordGray{ color:#303133;}
+.wordBlue{ color:#1367ad;}
+.userAccountTable td span.accountError{ height:35px; padding: 0 10px; line-height:35px; text-align:center; background:#f6e4e4; border-radius:3px; display:inline-block; font-size:14px;}
+.userAccount .fr{ width:190px;}
+.userAccount .fr h3{ padding:30px 0 15px 0;}
+.userAccount .fr h3 img{ border:2px solid #b5bdc0;}
+.userAccount .fr h4{ padding-left:5px;}
+.userAccount .fr p{ padding-top:20px; width:126px; text-align:center;}
+.userAccount .fr p a{ font-size:16px; font-weight:bold; margin:0 10px;}

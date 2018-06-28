@@ -1,0 +1,21 @@
+html { overflow-y:scroll}
+body{ font:14px/1.5 Arial,\5FAE\8F6F\96C5\9ED1,\5b8b\4f53;background:#fff; color:#333;}
+html,body,p,dl,dt,dd,table,td,th,input,img,form,div,span,ul,ol,li,h1,h2,h3,h4,h5,h6,select,fieldset,fieldset,input,button,sub,sup,textarea{margin:0;padding:0; }
+table {border-collapse:collapse; border-spacing:0;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;} 
+iframe,img{ border:0 none;}
+img{ vertical-align:middle;}
+em,i{font-style: normal;}
+ul,li,ol{list-style:none outside none;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{*zoom:1;}
+a{ text-decoration:none;color:#2371c8}
+a:hover{ text-decoration:underline;color:#f30}
+:focus { outline:0;}
+.clear{ clear:both; overflow:hidden; font-size:0; height:0;line-height:0;}
+.right { float:right}
+.left { float:left}
+.wrapper .main .red { color: #f30;}
+
+input,textarea,select { background-color:#fff}
+input::-ms-clear{display:none;}

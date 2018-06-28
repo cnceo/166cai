@@ -1,0 +1,43 @@
+/* 合买详情、彩票详情CSS */
+
+/* 个人信息 */
+.userIinfo{ width:996px; height:146px; border:2px solid #d8e1e6; margin-bottom:10px;}
+.userIinfoImg{ float:left; width:150px; text-align:center; padding:8px 10px 0 0;}
+.userIinfoImg img{ border:2px solid #b5bdc0;}
+.userIinfoName{ float:left; width:240px; padding-top:10px;}
+.userIinfoName p{ padding:5px 0; font-size:14px; font-weight:bold; color:#666;}
+.userIinfoMondy{ float:left; width:320px; padding-top:10px; position:relative;}
+.userIinfoMondy p{ padding:5px 0; font-size:14px; font-weight:bold; color:#666;}
+.lotteryJionColor{ font-weight: bold;  position:absolute; left:140px; bottom:5px; font-size: 14px;}
+.lotteryJionColor span{ width:150px; height:19px; background:#a5c7ea; position:absolute; top:0; left:0; z-index:22;}
+.lotteryJionColor strong{ width:120px; height:19px; background:#ef3f3f; position:absolute; top:0; left:0; z-index:33;}
+.userIinfo .fr{ width:260px; padding:20px 0 0;}
+.userIinfo .fr h4{ height:25px; font-size:14px; text-align:right; padding-right:15px; color:#666; font-weight:normal;}
+.buyDetailForm{ position:relative; height:45px;}
+.buyDetailForm input{ width:238px; height:38px; line-height:38px; padding-left:8px; border:1px solid #a5c8e9; position:absolute; top:0; left:0; z-index:11; font-size:14px;}
+.buyDetailForm input.hover{ border:1px solid #c9141b;}
+.buyDetailForm span{ color:#a2adb4; font-size:14px; padding-left:10px; position:absolute; top:0; left:0; z-index:22; line-height:38px;}
+.buyDetailWord{ padding:0 0 10px; font-size:16px; text-align:center; text-decoration: underline;}
+/* 彩票状态 */
+.lotteryStatus{ background:#f29f9f; width:100%; height:58px;}
+.lotteryStatus h2{ font-size:24px; line-height:58px; text-indent:10px; font-weight:normal; float:left;}
+.lotteryStatus .fr{ padding-right:10px;}
+.lotteryStatus .fr p{ padding:5px 0; text-align:right;}
+/* 彩票信息 */
+.buyDetailWrap{ width:996px; border:2px solid #d8e1e6; margin-bottom:10px; min-height:500px; padding-bottom:20px;}
+.buyDetailWrap h3{ padding:15px 0 10px 20px; font-size:16px; position:relative;}
+.buyDetailWrap h3 span{ position:absolute; top:10px; right:20px; color:#c9141b;}
+.buyLotteryTable{ width:960px; margin:0 auto; table-layout: fixed;}
+.buyLotteryTable th,.buyLotteryTable td{ border:1px solid #b5bdc0; text-align:center; color:#666; font-weight:normal;}
+.buyLotteryTable th{ height:40px; line-height:40px; font-size:14px; }
+.buyLotteryTable td{ line-height:14px; color:#666; font-size:12px; padding:5px 0;}
+.buyLotteryTable2{ width:960px; margin:0 auto;}
+.buyLotteryTable2 th,.buyLotteryTable2 td{ border:1px solid #b5bdc0; text-align:center; font-weight:normal; color:#666;}
+.buyLotteryTable2 th{ height:40px; line-height:40px; color:#666; font-size:14px; }
+.buyLotteryTable2 td{ line-height:14px; color:#666; font-size:12px; padding:5px 0;}
+.buyLotteryTable2 td{ background:#e8edf0;}
+/* 翻页 */
+.buyPages{ text-align:center; padding:20px 0 0; height:50px;}
+.buyPages p{ padding-left:37%;}
+.buyPages span{ cursor:pointer; display:inline-block; margin:0 10px; width:70px; height:27px; line-height:27px; background:#000; color:#fff; font-size:14px; float:left;}
+.buyPages select{ height:27px; line-height:27px; min-width:80px; float:left;}

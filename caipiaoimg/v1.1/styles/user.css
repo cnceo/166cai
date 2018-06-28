@@ -1,0 +1,295 @@
+/* caipiao userCenter
+*  @Version : 1.0
+*  @Author  : Rambo
+*  @Date    : 2014-10-27
+*  @Update  : 2015.02.09  remove div.bank-select-sp Height styles   ---by Rambo 
+* */
+.message-list .fold, .message-list .unfold, .message-list .pm-out .dot { background: url(/caipiaoimg/v1.1/images/icon25.png) no-repeat; }
+
+.other_bank i { background: url(/caipiaoimg/v1.1/images/icons-int.png) no-repeat; }
+
+.uc-side-nav dt.my-lottery i, .uc-side-nav dt.my-safety i, .uc-side-nav dd a i, .money_list li .s_yes, .bank_list li .s_yes, .type_list li .s_yes, .safe-info .state i, .steps-bar li i { background: url(/caipiaoimg/v1.1/images/uc-sprites.png) no-repeat; }
+
+.mod-account .infor .welcome .name, .n-money, .uc-side-nav dt { font-family: 'Microsoft Yahei'; }
+
+.bank-card-box ul { *zoom: 1; }
+.bank-card-box ul:before, .bank-card-box ul:after { content: ""; display: block; }
+.bank-card-box ul:after { clear: both; }
+
+.safe-success .sc-tip .icon { display: inline-block; *display: inline; *zoom: 1; vertical-align: middle; }
+
+.uc-container { margin-top: 10px; border: 1px solid #cddce5; width: 998px; }
+
+.mod-account .avatar, .mod-account .infor, .mod-account .funds, .mod-account .affiche, .uc-section .aside, .uc-section .article { float: left; _display: inline; }
+
+.mod-account { height: 123px; background: #f7f8f9; border-bottom: 1px solid #cecece; }
+.mod-account .avatar { width: 80px; height: 80px; overflow: hidden; margin: 22px 0 0 35px; position: relative; }
+.mod-account .avatar img { width: 100%; }
+.mod-account .avatar-mask { position: absolute; top: 0; left: 0; z-index: 3; width: 80px; height: 80px; overflow: hidden; background: url(/caipiaoimg/v1.1/images/uc-avatar-mask.png) no-repeat; _background: none; _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=noscale, src="/caipiaoimg/v1.1/images/uc-avatar-mask.png"); }
+.mod-account .avatar-modify { position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; z-index: 4; cursor: pointer; _background: url(#); }
+.mod-account .avatar-txt { display: block; padding: 0 0 8px; font-size: 12px; position: absolute; left: 0; bottom: 0; text-align: center; width: 100%; z-index: 2; color: #fff; background: rgba(0, 0, 0, 0.5); filter: progid:DXImageTransform.Microsoft.gradient(startColorStr="#80000000", EndColorStr="#80000000"); }
+.ie9 .mod-account .avatar-txt { filter: none; }
+.mod-account .infor { margin-left: 12px; width: 370px; padding: 13px 0 0; }
+.mod-account .infor .welcome { padding: 5px 0; }
+.mod-account .infor .welcome .name { font-size: 16px; color: #333; }
+.mod-account .infor .safety-level { padding: 5px 0; margin-bottom: 4px; line-height: 18px; }
+.mod-account .infor .safety-level a { color: #666; text-decoration: underline; margin-left: 15px; }
+.mod-account .infor .safety-level a:hover { color: #f30; }
+.mod-account .infor .safety-progess { width: 168px; height: 8px; display: inline-block; vertical-align: middle; margin-right: 10px; overflow: hidden; background: url(/caipiaoimg/v1.1/images/uc-safe-level.png) no-repeat; }
+.mod-account .infor .safety-status { font-weight: normal; }
+.mod-account .infor .level-p .safety-progess { background-position: 0 -36px; }
+.mod-account .infor .level-p .safety-status { color: #62b05c; }
+.mod-account .infor .level-h .safety-progess { background-position: 0 -27px; }
+.mod-account .infor .level-h .safety-status { color: #62b05c; }
+.mod-account .infor .level-t .safety-progess { background-position: 0 -18px; }
+.mod-account .infor .level-t .safety-status { color: #62b05c; }
+.mod-account .infor .level-m .safety-progess { background-position: 0 -9px; }
+.mod-account .infor .level-m .safety-status { color: #ff9c00; }
+.mod-account .infor .level-l .safety-progess { background-position: 0 0; }
+.mod-account .infor .level-l .safety-status { color: #f00; }
+.mod-account .funds { margin: 20px 0 0; _padding-bottom: 1px; width: 243px; border-left: 1px dashed #c6c6c7; position: relative; z-index: 10; }
+.mod-account .funds p { padding-left: 12px; }
+.mod-account .funds p.first { margin-top: -7px; }
+.mod-account .funds p.mid { margin: 9px 0 14px; }
+.n-money { color: #be0000; font-size: 16px; position: relative; top: 1px; margin-right: 3px; }
+.mod-account .funds p .arial { color: #333; margin-right: 3px; }
+.mod-account .funds p .q-tip { position: relative; top: -1px; *top: 1px; _top: 2px; margin-left: 3px; }
+.mod-account .funds #rip-price { white-space: normal; width: 300px; color: #333; }
+.mod-account .funds .btn-group { text-align: left; }
+.mod-account .affiche { width: 236px; margin: 20px 0; border-left: 1px dashed #c6c6c7; padding-left: 11px; height: 83px; overflow: hidden; }
+.mod-account .affiche h3 { margin-bottom: 3px; }
+.mod-account .affiche h3 a { color: #666; cursor: pointer; }
+.mod-account .affiche h3 a:hover { color: #f30; }
+.mod-account .affiche p { position: relative; *zoom: 1; padding: 2px 0 2px 10px; }
+.mod-account .affiche p i { position: absolute; left: 0; top: 50%; width: 3px; height: 3px; margin-top: -1px; border-radius: 50%; overflow: hidden; background: #9d9d9e; }
+.mod-account .affiche p a { display: block; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #666; }
+.mod-account .affiche p a:hover { color: #f30; }
+
+.uc-section { background: url(/caipiaoimg/v1.1/images/uc-section-bg.png) repeat-y left top #fff; }
+.uc-section .aside { width: 149px; margin-right: 1px; }
+.uc-section .article { width: 800px; padding: 15px 24px; }
+.uc-section .edit-form .form-item-txt { *display: inline; *zoom: 1; vertical-align: middle; height: 34px; line-height: 34px; }
+.uc-section .edit-form .form-item-txt img { _position: relative; _top: 6px; _vertical-align: 2px; margin-right: 4px; }
+.uc-section .btn-group .form-item-con { _padding-bottom: 1px; }
+.uc-section .btn-group .btn { _width: 100px; _padding: 0; *zoom: 1; }
+
+.uc-side-nav { border-bottom: 1px solid #fff; margin-bottom: 101px; }
+.uc-side-nav dt { height: 46px; line-height: 46px; border-top: 1px solid #fff; border-bottom: 1px solid #e2e8ed; color: #3191ce; padding-left: 43px; font-size: 16px; position: relative; }
+.uc-side-nav dt.my-lottery { border-top: 0 none; }
+.uc-side-nav dt.my-lottery i { width: 21px; height: 21px; float: left; overflow: hidden; background-position: -35px 0; margin: 12px 0 0 -28px; }
+.uc-side-nav dt.my-safety i { width: 20px; height: 22px; float: left; overflow: hidden; background-position: -11px 0; margin: 13px 0 0 -28px; }
+.uc-side-nav dd { height: 44px; line-height: 44px; border-top: 1px solid #fff; border-bottom: 1px solid #e2e8ed; }
+.uc-side-nav dd a { padding-left: 43px; display: block; height: 44px; position: relative; font-size: 14px; color: #333; }
+.uc-side-nav dd a:hover { color: #333; text-decoration: none; background: #e3ebf0; }
+.uc-side-nav dd a i { width: 7px; height: 11px; position: absolute; overflow: hidden; right: 18px; top: 50%; margin-top: -5px; background-position: 0 0; }
+.uc-side-nav dd.current { border: 1px solid #cecece; height: 46px; line-height: 46px; margin: -1px; position: relative; z-index: 2; border-right-color: #fff; }
+.uc-side-nav dd.current a { background: #fff; height: 46px; font-weight: bold; }
+.uc-side-nav dd.current a:hover { background: #fff; }
+
+.aside .other-contact { padding-top: 19px; padding-bottom: 9px; *padding-bottom: 17px; border-top: 1px solid #fff; }
+.aside .other-contact a { display: block; width: 103px; height: 26px; line-height: 26px; text-align: center; margin: 0 auto 8px; background: #f8f8f8; border: 1px solid #dcdcdc; color: #666; }
+.aside .other-contact a:hover { border-color: #b5b5b5; color: #666; text-decoration: none; }
+
+.article h2.tit { height: 26px; padding-bottom: 10px; line-height: 26px; font-size: 14px; border-bottom: 1px solid #e0e0e0; }
+.article .tit-b { overflow: hidden; padding-bottom: 10px; height: 26px; line-height: 26px; font-size: 14px; }
+.article .tit-b h2 { float: left; }
+.article .tit-b .more { float: right; font-size: 12px; color: #666; text-decoration: underline; }
+.article .tit-b .more:hover { color: #f30; }
+.article .tit-b p.tip { float: left; font-size: 12px; margin-left: 15px; }
+
+.safe-center .safe-hd { position: relative; *zoom: 1; }
+.safe-center .safe-hd .btn-blue-allBind { position: absolute; right: 0; bottom: 11px; width: 120px; }
+
+.cash-tip { padding: 16px 0; border-bottom: 1px dashed #e0e0e0; }
+
+.cash-item { padding-top: 40px; }
+.cash-item .steps-bar { margin-top: 0; }
+
+.cash-form { padding: 50px 0 10px 150px; }
+.ipt-money, .ipt-name { font-size: 12px; width: 125px; margin-right: 5px; }
+
+.uc-form-list li .label_like { font-size: 14px; font-weight: bold; padding-right: 14px; margin-left: -116px; }
+.uc-form-list li .con { line-height: 34px; font-size: 14px; }
+.uc-form-list li .con .name, .uc-form-list li .con .bankCard-num, .uc-form-list li .con .tel { font-weight: bold; }
+.uc-form-list li .con .bankCard-num { color: #333; margin-right: 20px; }
+.uc-form-list li .con .btn-veiw-more { font-size: 12px; }
+.uc-form-list li .con .n-money { font-weight: bold; margin-right: 3px; }
+.form_tips_error .tips_con { width: auto; }
+
+.recharge-form { padding-top: 20px; *zoom: 1; }
+.recharge-form .form-item-con { padding-right: 182px; }
+.recharge-form .label_like { float: left; width: 100px; margin-left: -110px; padding-right: 10px; font-size: 14px; line-height: 34px; text-align: right; font-size: 14px; font-weight: bold; }
+.recharge-form .con { float: left; position: relative; }
+.recharge-form .btn_area { padding-left: 110px; }
+
+.recharge-content { padding-top: 20px; }
+.recharge-content .tab-nav-small { margin-left: 110px; border-bottom: 0 none; }
+.recharge-content .tab-nav-small li a { border-bottom: 1px solid #e0e0e0; }
+.recharge-content .tab-nav-small li a span { height: 30px; line-height: 30px; padding-top: 0; }
+.recharge-content .tab-nav-small li.active a { border-bottom: 1px solid #fff; }
+.recharge-content .tab-nav-small li.active a span { border: 0 none; margin: 0; height: 30px; line-height: 30px; }
+.recharge-content .dz-con { padding-top: 3px; }
+.recharge-content .dz-con .money { font: bold 20px arial; color: #be0000; position: relative; top: 2px; }
+
+.warm-tip { padding-top: 100px; }
+.warm-tip h3 { font-weight: normal; margin-bottom: 3px; }
+.warm-tip p { color: #999; padding: 1px 0; }
+
+.money_list, .bank_list, .type_list { zoom: 1; position: relative; }
+.money_list ul, .bank_list ul, .type_list ul { margin-right: -10px; *padding-bottom: 10px; }
+.money_list li, .bank_list li, .type_list li { float: left; text-align: center; color: #333; font-weight: bold; font-size: 14px; width: 158px; height: 45px; background: #fff; margin: 0 10px 10px 0; _display: inline; border: 1px solid #c6ced6; line-height: 20px; padding-top: 7px; position: relative; cursor: pointer; }
+.money_list li em, .bank_list li em, .type_list li em { color: #999; font-weight: normal; display: block; font-size: 12px; }
+.money_list li .s_yes, .bank_list li .s_yes, .type_list li .s_yes { position: absolute; width: 16px; height: 16px; overflow: hidden; background-position: 0px -27px; right: 0; bottom: 0; _bottom: -1px; display: none; }
+.money_list li.selected, .bank_list li.selected, .type_list li.selected { border: 2px solid #f60; height: 44px; width: 156px; padding-top: 6px; }
+.money_list li.selected .s_yes, .bank_list li.selected .s_yes, .type_list li.selected .s_yes { display: block; }
+.money_list li:hover, .bank_list li:hover, .type_list li:hover { border-color: #f60; }
+.money_list .hover, .bank_list .hover, .type_list .hover { border-color: #f60; }
+
+.bank_list ul { margin-right: -12px; margin-bottom: -10px; }
+.bank_list li { width: 150px; height: 38px; padding: 1px 0 1px 8px; text-align: left; margin-right: 12px; }
+.bank_list li img { vertical-align: middle; }
+.bank_list li .s_yes { _right: -1px; _bottom: 0; }
+.bank_list li.selected { padding: 0 0 0 7px; border: 2px solid #f60; height: 38px; width: 149px; }
+.bank_list .line { height: 0px; padding: 2px 0 15px 5px; border-top: 1px dotted #d9d9d9; margin-top: 15px; position: relative; }
+
+.rechargeCard_list li { height: 30px; width: 136px; }
+.rechargeCard_list li.selected { height: 30px; width: 135px; }
+
+.other_bank { position: absolute; left: 50%; top: -10px; overflow: hidden; background: #fff; width: 86px; height: 22px; margin-left: -43px; text-align: center; color: #3876b2; line-height: 22px; }
+.other_bank:hover { color: #3876b2; }
+.other_bank i { display: inline-block; overflow: hidden; background-position: -73px 0px; width: 13px; height: 8px; margin-left: 5px; *display: inline; *zoom: 1; vertical-align: middle; }
+
+.other_bank_shrink i { background-position: -87px 0px; }
+
+.type_list { margin-bottom: -10px; }
+.type_list li { height: 33px; line-height: 33px; padding: 0; width: 88px; text-align: left; text-align: center; font-size: 16px; font-family: 'Microsoft YaHei'; font-weight: normal; }
+.type_list li.selected { height: 31px; line-height: 31px; padding: 0; width: 86px; }
+
+/*filter-oper*/
+.filter-oper { padding: 18px 0; *zoom: 1; }
+.filter-oper:after { content: "."; height: 0; visibility: hidden; display: block; clear: both; font-size: 0; line-height: 0; }
+.filter-oper .lArea { float: left; line-height: 22px; }
+.filter-oper .rArea { float: right; line-height: 22px; }
+.filter-oper .rArea .btn-default-small { height: 20px; padding: 0 2.4em; line-height: 20px; _vertical-align: top; }
+
+.safe-info li { padding: 19px 0; overflow: hidden; border-bottom: 1px dashed #d9d9d9; }
+.safe-info li div { float: left; _display: inline; height: 22px; line-height: 22px; }
+.safe-info li.over .state { color: #6dbf67; }
+.safe-info li.over .state i { background-position: -42px -26px; }
+.safe-info .state { padding-left: 30px; width: 66px; margin-left: 15px; color: #999; }
+.safe-info .state i { float: left; margin-left: -30px; width: 22px; height: 22px; overflow: hidden; background-position: -18px -26px; }
+.safe-info .title { width: 106px; color: #333; font-size: 14px; }
+.safe-info .supply { color: #999; }
+.safe-info .supply strong { color: #666; font-family: arial; font-size: 14px; }
+.safe-info .operate { float: right; padding-right: 10px; text-align: center; color: #999; }
+
+.safe-item-box { padding: 50px 0; }
+
+.steps-bar { width: 584px; height: 6px; font-size: 0; margin: 20px auto; background: url(/caipiaoimg/v1.1/images/uc-step-bg.png) no-repeat; *zoom: 1; }
+.steps-bar li { float: left; width: 194px; height: 6px; position: relative; _display: inline; }
+.steps-bar li.last { float: right; }
+.steps-bar li i { width: 22px; height: 22px; font: bold 12px/22px arial; color: #999; position: absolute; top: 50%; left: 50%; margin: -11px 0 0 -11px; overflow: hidden; background-position: 0 -52px; text-align: center; }
+.steps-bar li .des { display: block; margin-top: 20px; text-align: center; color: #999; font-size: 12px; position: absolute; width: 100%; }
+.steps-bar li.cur { background: url(/caipiaoimg/v1.1/images/uc-step-highBg24.png) no-repeat; }
+.steps-bar li.cur i { background-position: -23px -52px; color: #fff; }
+.steps-bar li.cur .des { color: #3a90d7; }
+.steps-bar2 li { width: 292px; }
+.steps-bar2 li.cur { background: url(/caipiaoimg/v1.1/images/uc-step2-highBg.png) 0 0 no-repeat; }
+
+.mail-text-area { padding: 50px 0 50px 200px; }
+
+.safe-way { padding-top: 30px; }
+.safe-way dt { color: #333; margin-bottom: 10px; font-weight: bold; }
+.safe-way dd { margin-bottom: 15px; }
+.safe-way dd p { color: #333; padding: 2px 0; }
+
+.safe-success { text-align: center; }
+.safe-success .form-item-con { text-align: left; }
+.safe-success .sc-tip { margin: 15px 0; font-family: 'Microsoft Yahei'; font-size: 20px; color: #333; font-weight: bold; }
+.safe-success .sc-tip .icon { vertical-align: -7px; _vertical-align: -2px; margin-right: 10px; }
+.safe-success .con { font-size: 14px; }
+.safe-success .uc-form-list { padding-left: 265px; }
+.safe-success .uc-form-list li { margin-bottom: 15px; }
+.safe-success .btn { width: 118px; height: 33px; padding: 0; line-height: 33px; font-size: 16px; }
+.safe-success .btn-group { font-size: 0; }
+.safe-success .btn-blue-med { margin-right: 20px; border: 1px solid #238be2; }
+.safe-success .btn-lightOrange-med { font-weight: 600; }
+
+.safe-auth-box { padding-bottom: 0; }
+.safe-auth-box .label_like { width: 110px; }
+.safe-auth-box .form_tips .tips_con { width: auto; }
+.safe-auth-box .btn_area { padding-left: 123px; }
+.safe-auth-box .con { font-size: 14px; }
+.safe-auth-box .pl50 { padding-left: 50px; }
+
+.safeProfile-form { padding: 0 0 30px; }
+.safeProfile-form fieldset { padding-top: 18px; border-bottom: 1px dashed #d9d9d9; }
+.safeProfile-form fieldset .tit { padding: 12px 0 18px 30px; font-size: 14px; height: 35px; line-height: 35px; }
+.safeProfile-form fieldset .tit .pro { font-weight: normal; color: #999; font-size: 12px; margin-left: 15px; }
+.safeProfile-form .btn-group { margin-top: -1px; background: #fff; }
+
+.message-cont { padding-top: 5px; }
+
+.message-list { *zoom: 1; }
+.message-list li { *zoom: 1; }
+.message-list .txt { color: #333; line-height: 1.6; }
+.message-list .time { position: absolute; right: 0; top: 8px; font-family: Arial; color: #999; font-weight: normal; }
+.message-list .new { font-weight: bold; }
+.message-list .fold, .message-list .unfold { padding-right: 14px; display: inline-block; background-position: 0 0; }
+.message-list .fold { background-position: 32px -120px; }
+.message-list .unfold { background-position: 32px -145px; }
+.message-list .pm-out { position: relative; *zoom: 1; padding: 7px 150px 7px 20px; }
+.message-list .pm-out .dot { position: absolute; left: 0; top: 16px; width: 4px; height: 4px; overflow: hidden; background-position: 0 -100px; }
+.message-list .pm-out .txt { font-size: 14px; }
+.message-list .pm-out .time { right: 8px; }
+.message-list .pm-reply { position: relative; padding-left: 9px; margin-left: 20px; margin-bottom: 15px; *zoom: 1; border: 1px solid #e0e0e0; background: #f7f8f9; font-size: 12px; }
+.message-list .pm-reply .arrow-top { position: absolute; top: -5px; left: 15px; font-family: 'simsun'; font-size: 12px; line-height: 100%; }
+.message-list .pm-reply .arrow-top i, .message-list .pm-reply .arrow-top span { position: absolute; font-family: 'simsun'; }
+.message-list .pm-reply .arrow-top i { top: -1px; left: 0px; color: #e0e0e0; }
+.message-list .pm-reply .arrow-top span { top: 0; left: 0; color: #f8faf9; }
+.message-list .pm-reply .item { border-bottom: 1px dashed #e0e0e0; padding: 7px 148px 7px 0; margin-bottom: -1px; position: relative; *zoom: 1; }
+.message-list .pm-reply .item .time { right: 7px; top: 8px; }
+.message-list .pm-reply .item .txt span { color: #999; }
+
+.bank-select dt span, .mybank-box dt span { display: block; _height: 32px; }
+.bank-select dt img, .mybank-box dt img { _position: relative; _top: 6px; _vertical-align: 2px; }
+.bank-select img, .mybank-box img { margin-right: 4px; }
+.bank-select small, .mybank-box small { font-size: 12px; }
+
+.bank-select-opt .bank-select-sp { width: 409px; padding: 0 15px 5px; background: #fff; border: 1px solid #c6ced6; *zoom: 1; }
+.bank-select-opt .bank-select-sp .bank-group-item { border-bottom: 1px dashed #c6c6c7; padding: 5px 0; }
+.bank-select-opt .bank-select-sp .bank-group-item h3 { margin-bottom: 0; padding-left: 0; font-size: 12px; color: #666; line-height: 22px; }
+.bank-select-opt .bank-select-sp .last { border-bottom: 0 none; }
+.bank-select-opt .bank-select-sp li { float: left; _display: inline; width: 136px; padding: 5px 0; margin-bottom: 0; height: 20px; line-height: 20px; }
+.bank-select-opt .bank-select-sp li a { font-size: 12px; color: #999; display: inline; padding-left: 0; height: auto; line-height: 20px; }
+.bank-select-opt .bank-select-sp li a:hover { background: none; color: #f30; }
+.bank-select-opt .bank-select-sp li a img { vertical-align: middle; margin-right: 5px; }
+
+.bank-card-box ul { margin-right: -24px; }
+.bank-card-box li { float: left; }
+.bank-card-box .bank-card, .bank-card-box .bank-card-add { position: relative; width: 252px; height: 160px; margin: 0 20px 20px 0; background: #fafafb; border: 1px dashed #cecece; color: #333; }
+.bank-card-box .bank-card-add { position: relative; display: block; height: 60px; padding-top: 100px; background: #fefefe; text-align: center; color: #2371c8; }
+.bank-card-box .bank-card-add .icon-add { position: absolute; left: 50%; top: 50%; width: 25px; height: 25px; margin-top: -20px; margin-left: -12px; }
+.bank-card-box .bank-card-add .icon-add-h { position: absolute; left: 0; top: 50%; width: 25px; height: 5px; font-size: 0; line-height: 5px; margin-top: -3px; background: #a8b5c4; }
+.bank-card-box .bank-card-add .icon-add-s { position: absolute; top: 0; left: 50%; width: 5px; height: 25px; margin-left: -3px; background: #a8b5c4; }
+.bank-card-box .bank-card-add:hover { background: #F1F8FF; }
+.bank-card-hd { height: 45px; padding: 0 16px; border-bottom: 1px solid #cecece; line-height: 45px; }
+.bank-card-hd img { margin-right: 10px; _position: relative; _top: 13px; _vertical-align: 10px; }
+.bank-card-bd { padding: 14px 10px; font: 700 16px/1.5 tahoma; }
+.bank-card-ft { position: absolute; bottom: 0; width: 100%; }
+.bank-card-ft .lnk-group { padding: 14px 10px; overflow: hidden; *zoom: 1; }
+.bank-card-ft .lnk-modify, .bank-card-ft .lnk-del { float: right; color: #333; }
+.bank-card-ft .lnk-del { margin-right: 14px; _display: inline; }
+.bank-card-default .bank-card-hd { position: relative; }
+.bank-card-default .icon-default { position: absolute; right: 0; top: 0; width: 31px; height: 32px; background: url(/caipiaoimg/v1.1/images/icon-default.png) 0 0 no-repeat; _background: none; _filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true, sizingMethod=noscale, src="/caipiaoimg/v1.1/images/icon-default.png"); }
+.bank-card-default .lnk-default { display: none; }
+
+.cash-form .lnk-add-bank { line-height: 32px; }
+
+.mybank-box .bank-select-sp { background: #fff; border: 1px solid #c6ced6; }
+.mybank-box .bank-select-sp a { padding: 1px 9px; color: #999; }
+.mybank-box .bank-select-sp a:hover { background: #fff; color: #f30; }
+.mybank-box img { _position: relative; _top: 6px; _vertical-align: 2px; }
+
+.pop-bank-id .form-item-label { width: 90px; }
+.pop-bank-id .form-item-con { margin-left: 100px; }

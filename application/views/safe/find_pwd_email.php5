@@ -1,0 +1,35 @@
+<table>
+<tr>
+	<td>您好，</td>
+</tr>
+<tr>
+	<td><br></td>
+</tr>
+<tr>
+	<td>您正在2345彩票网通过邮箱验证身份重置密码，请点击下面的链接，完成密码重置</td>
+</tr>
+<tr>
+	<td><a href="<?php echo $validate_url; ?>" target="_blank"><?php echo $validate_url; ?></a></td>
+</tr>
+<tr>
+	<td>（如不能点击，请将以上地址粘贴到浏览器访问）</td>
+</tr>
+<tr>
+	<td><br></td>
+</tr>
+<tr>
+    <td>链接半小时内有效。</td>
+</tr>
+<tr>
+    <td>如您没有在2345彩票网操作，请不要点击以上链接。</td>
+</tr>
+<tr>
+    <td>2345彩票</td>
+</tr>
+<tr>
+    <td><?php echo date("Y"); ?>年<?php echo date("m"); ?>月<?php echo date("d"); ?>日</td>
+</tr>
+<tr>
+	<td>本邮件由系统自动发出，请不要直接回复，如您有任何疑问，请联系2345彩票客服：400-000-2345转8</td>
+</tr>
+</table>
